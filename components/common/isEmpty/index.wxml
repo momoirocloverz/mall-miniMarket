@@ -1,0 +1,4 @@
+<view class="is-empty" style="margin: {{margin}};">
+  <image src="{{image}}"></image>
+  <view>{{text}}</view>
+</view>

@@ -1,0 +1,71 @@
+<view class="container">
+  <view class="content">
+    <navigator url="/pages/seller/store/fixName?val={{name}}">
+      <view class="cont-item">
+        <text>店铺名称</text>
+        <view class="value">
+          <text>{{name}}</text>
+          <van-icon name="arrow" color="#999" />
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/seller/store/fixDescript?val={{introduce}}">
+      <view class="cont-item">
+        <text>店铺简介</text>
+        <view class="value">
+          <text>{{introduce}}</text>
+          <van-icon name="arrow" color="#999" />
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/seller/store/fixPhone?val={{phone}}">
+      <view class="cont-item">
+        <text>店铺电话</text>
+        <view class="value">
+          <text>{{phone}}</text>
+          <van-icon name="arrow" color="#999" />
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/seller/store/fixHeadImg?val={{imgUrl}}&imgId={{imgId}}">
+      <view class="cont-item">
+        <text>店铺头像</text>
+        <view class="value">
+          <image src="{{imgUrl}}?x-oss-process=image/resize,w_90"></image>
+          <van-icon name="arrow" color="#999" />
+        </view>
+      </view>
+    </navigator>
+    
+    <navigator url="/pages/seller/store/mainImage?val={{mainImage}}&imgId={{mainImageId}}">
+      <view class="cont-item">
+        <text>店铺封面图</text>
+        <view class="value">
+          <image src="{{mainImage}}?x-oss-process=image/resize,w_90"  mode="aspectFill"></image>
+          <van-icon name="arrow" color="#999" />
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/seller/store/shareImage?val={{shareImage}}&imgId={{shareImageId}}">
+      <view class="cont-item">
+        <text>店铺分享图</text>
+        <view class="value">
+          <image src="{{shareImage}}?x-oss-process=image/resize,w_90" mode="aspectFill"></image>
+          <van-icon name="arrow" color="#999" />
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/seller/store/authInfo">
+      <view class="cont-item">
+        <text>认证信息</text>
+        <van-icon name="arrow" color="#999" />
+      </view>
+    </navigator>
+  </view>
+  
+  <!-- <view class="contact">
+    <view bindtap="callStore">如有疑问，请联系客服 <text>18158512049</text> </view>
+  </view> -->
+    <!-- 拨打电话 -->
+  <!-- <van-dialog id="van-dialog" /> -->
+</view>

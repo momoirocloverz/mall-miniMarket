@@ -1,0 +1,46 @@
+/* pages/seller/store/shareImage.wxss */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.save {
+  width: 550rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 50rpx;
+  background: #FFD339;
+  color: #333;
+  font-size: 32rpx;
+  margin: 0 auto;
+}
+.add-area {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 5rpx;
+  border: 1rpx dashed #cccccc;
+}
+.add-area text {
+  display: block;
+  text-align: center;
+  color: #ccc;
+  font-size: 32rpx;
+}
+.add-area .add-icon {
+  font-size: 110rpx;
+  font-weight: bold;
+}
+.add-image {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  background: #fff;
+  margin-bottom: 60rpx;
+}

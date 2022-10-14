@@ -1,0 +1,124 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+}
+.content {
+  width: 100%;
+  padding: 30rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.fund_box {
+  width: 630rpx;
+  height: 240rpx;
+  padding: 0 30rpx;
+  background: url('https://img.hzanchu.com/acimg/90db03d45d903b8e0f18dedf91355988.png?x-oss-process=image/resize,l_300') no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+.fund_box .left {
+  flex: 1;
+}
+.fund_box .left text:first-child {
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+  display: block;
+}
+.fund_box .left text:last-child {
+  display: block;
+  font-size: 66rpx;
+  color: #333;
+  font-weight: 600;
+}
+.fund_box .right {
+  width: 195rpx;
+  text-align: right;
+}
+.fund_box .right text {
+  font-size: 28rpx;
+  color: #535353;
+  margin-bottom: 48rpx;
+  display: block;
+  margin-right: 18rpx;
+}
+.withdrawal {
+  width: 190rpx;
+  height: 70rpx;
+  background: #fff;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #5a3d00;
+}
+.item-data {
+  height: 87rpx;
+  line-height: 87rpx;
+  font-size: 30rpx;
+  color: #333;
+  border-bottom: 1rpx solid #F5F7FA;
+}
+.record {
+  height: 87rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+}
+.record view {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #333;
+}
+.remain {
+  width: 682rpx;
+  line-height: 50rpx;
+  color: #999;
+  font-size: 28rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}
+.confirm {
+  padding: 46rpx 79rpx 45rpx 84rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #333;
+}
+.confirm text {
+  color: #F76925;
+}
+.line {
+  width: 100vw;
+  height: 15rpx;
+  background: #F5F7FA;
+  margin-left: -30rpx;
+}
+.item-data.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.remark {
+  width: 670rpx;
+  margin: 26rpx auto 0 auto;
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 48rpx;
+}
+.dialog-cont {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 50rpx;
+  padding: 46rpx 60rpx;
+  text-align: center;
+}
+.dialog-cont text {
+  color: #F76925;
+}

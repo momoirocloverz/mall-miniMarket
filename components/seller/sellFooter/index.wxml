@@ -1,0 +1,11 @@
+<van-tabbar
+  active="{{ active }}"
+  active-color="#07c160"
+  inactive-color="#000"
+  bind:change="onChange"
+>
+  <van-tabbar-item icon="{{active === 0 ? 'https://img.hzanchu.com/acimg/40277d100575438e54cb76503e6fe674.png' : 'https://img.hzanchu.com/acimg/e3def83225a129453f902dbbbe1871fd.png'}}">店铺</van-tabbar-item>
+  <!-- <van-tabbar-item icon="{{active === 1 ? 'https://img.hzanchu.com/acimg/b287177cfa611932203ce2dda53f666b.png' : 'https://img.hzanchu.com/acimg/c2eeb71a9c509176a98fb617436941bb.png'}}">发现</van-tabbar-item> -->
+  <van-tabbar-item icon="{{active === 1 ? 'https://img.hzanchu.com/acimg/e945e09225931a5bcf839ff97924a9dd.png' : 'https://img.hzanchu.com/acimg/1654cacbc33cad0431bf67df2f15e820.png'}}">消息</van-tabbar-item>
+  <van-tabbar-item icon="{{active === 2 ? 'https://img.hzanchu.com/acimg/6ffe1ef6b84ec3e4e86a8519074e1dba.png' : 'https://img.hzanchu.com/acimg/361b24df4798c91a478e1366687425b6.png'}}">我的</van-tabbar-item>
+</van-tabbar>

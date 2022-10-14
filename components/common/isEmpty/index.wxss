@@ -1,0 +1,15 @@
+.is-empty {
+  overflow: hidden;
+  text-align: center;
+}
+.is-empty image {
+  width: 442rpx;
+  height: 355rpx;
+}
+.is-empty view {
+  font-size:28rpx;
+  font-family:PingFang;
+  color: #999;
+  line-height: 100rpx;
+  text-align: center;
+}

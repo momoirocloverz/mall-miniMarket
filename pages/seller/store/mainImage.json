@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "店铺封面图",
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

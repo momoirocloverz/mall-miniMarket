@@ -1,0 +1,75 @@
+<nav-bar navHeight="{{menubutton.height}}" navTop="{{menubutton.top}}" opacity="{{opacity}}" backIcon="{{backIcon}}" homeIcon="{{homeIcon}}">
+  <!-- <view class="head-btn">我的</view> -->
+</nav-bar>
+<view class="container" style="padding-top: {{menubutton.top * 2 + menubutton.height * 2}}rpx">
+  <view 
+    class="navbar" 
+    style="background:url({{bannerImage}}) no-repeat;background-size: 100% 100%;"
+  ></view>
+
+  <!-- 主体内容 -->
+  <view class="buyer-main-info">
+    <view class="buyer-main">
+      <image src="{{storeInfo.store_image}}" class="buyer-main-pic"/>
+      <view class="buyer-gu-store">
+        <view class="buyer-gu-top" bindtap="goLicense">
+          <view class="buyer-gu-title">
+            {{storeInfo.title}}
+          </view>
+          <van-icon wx:if="{{isShowLicense}}" name="arrow" size="14" color="#666666"/>
+        </view>
+        <view class="buyer-gu-intro">{{storeInfo.description}}</view>
+      </view>
+      <view class="buyer-gu-icon">
+        <!-- 地址 -->
+        <view class="buyer-icon-info" bindtap="toLocation">
+          <image src="https://img.hzanchu.com/acimg/6a72cedd6050e8898a55cbe71aeae0fc.png" class="location-map"/>
+          <text class="buyer-icon-txt">地址</text>
+        </view>
+        <!-- 收藏 -->
+        <view class="buyer-icon-info" bindtap="handleCollect">
+          <image 
+            src="https://img.hzanchu.com/acimg/97c6e4bf7b3944b14117d48bc37ccd74.png"
+            class="buyer-collect-image" 
+            wx:if="{{!is_collect}}"
+          />
+          <image 
+            src="https://img.hzanchu.com/acimg/13df6279ecf4198d1583ed29e0b595d1.png" 
+            class="buyer-collect-image" 
+            wx:else
+          />
+          <text class="buyer-icon-txt">{{is_collect ? '已收藏' : '收藏'}}</text>
+        </view>
+      </view>
+    </view>
+    <van-skeleton class="buy-content" title row="25" animate loading="{{ loading }}">
+      <!-- 分类标签页 -->
+      <van-tabs 
+        line-width="{{36}}" 
+        :active="{{1}}" 
+        color="#FA720F" 
+        border="{{false}}" 
+        bind:click="selectCate"
+        wx:if="{{cateList.length > 0}}"
+      >
+        <van-tab title="{{item.category_name}}" wx:for="{{cateList}}" wx:key="index"></van-tab>
+      </van-tabs>
+      <!-- 商品列表 -->
+      <view class="goods-box">
+        <goods-card wx:for="{{goodsList}}" wx:key="index" goods="{{item}}" storeId="{{store_id}}" bindaddCart="onAddCart">
+        </goods-card>
+      </view>
+      <!-- 为空 -->
+      <is-empty image="https://img.hzanchu.com/acimg/1a57ba3d5c537dda9a1c1a77445da91d.png" wx:if="{{isEmpty}}"
+        text="暂未上架商品哦~" margin="100rpx auto"></is-empty>
+      <!-- 到底 -->
+      <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+      <!-- 登录 -->
+      <view class="login-overlay" wx:if="{{is_login}}">
+        <view class="login-text">登录本家鲜账号后，查看完整功能</view>
+        <button class="login-btn" bindtap="goLogin">点击登录</button>
+      </view>
+      <view class="bottom-box"></view>
+    </van-skeleton>
+  </view>
+</view>

@@ -1,0 +1,85 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+}
+.good-card {
+  width: 100%;
+  background: #fff;
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 25rpx;
+}
+.good-image {
+  width: 215rpx;
+  height: 215rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+.good-image image {
+  width: 100%;
+  height: 100%;
+}
+.good-content {
+  flex: 1;
+}
+.good-content .title {
+  min-height: 68rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #333333;
+  line-height: 38rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+  word-break: break-all;
+}
+.buy-msg {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buy-msg .price {
+  font-size: 32rpx;
+  color: #F51818;
+  font-weight: 500;
+}
+.buy-msg .store {
+  font-size: 30rpx;
+  color: #999;
+  font-weight: 400;
+}
+.operation-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30rpx;
+}
+.operation-btn .delete {
+  width: 139rpx;
+  height: 60rpx;
+  border: 1rpx solid #666;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 58rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #666;
+  margin-right: 30rpx;
+}
+.operation-btn .edit {
+  width: 139rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #333;
+  background: #FFD339;
+}

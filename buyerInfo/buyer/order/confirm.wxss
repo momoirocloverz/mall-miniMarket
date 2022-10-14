@@ -1,0 +1,65 @@
+/* pages/buyer/order/confirm.wxss */
+.container{
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 20rpx;
+  padding-bottom: 150rpx;
+  background: #F5F7FA;
+}
+/* 地址 */
+.address-wrap{
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+.goods-list{
+  margin: 0 30rpx;
+  border-radius: 16rpx;
+}
+.goods-card{
+  background-color: #ffffff!important;
+}
+.goods-title{
+  font-weight: 500!important;
+  font-size: 26rpx!important;
+}
+.submit-btn{
+  color: #333333!important;
+  background: #FFD101!important;
+  border-color:  #FFD101!important;
+}
+.address-label{
+  width: 500rpx!important;
+  color: #333333!important;
+  word-break: break-all !important;
+}
+.box-shadow{
+  border-radius: 10rpx;
+}
+/* 价格栏 */
+.price-column{
+  display: flex;
+  font-size: 28rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #ffffff;
+  padding: 30rpx;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+.goods-num{
+  font-weight: 400;
+  color: #999999;
+}
+.goods-price-label{
+  font-weight: 500;
+  color: #333333;
+}
+.goods-price{
+  font-weight: 700;
+  color: #F11D09;
+}
+.goods-express{
+  font-weight: 400;
+}

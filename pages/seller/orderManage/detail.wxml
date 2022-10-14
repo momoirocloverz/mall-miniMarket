@@ -1,0 +1,77 @@
+<view class="container">
+  <view class="order-top">
+    <view class="order-status">
+      <van-cell 
+        center 
+        border="{{false}}"
+        custom-class="status-cell"
+        label-class="label-text"
+        use-label-slot
+        title="{{orderType[orderInfo.status].name}}" 
+      >
+        <van-icon 
+          slot="right-icon" 
+          name="{{orderImg[orderInfo.status].name}}" 
+          class="custom-icon" />
+        <van-count-down
+          wx:if="{{time}}"
+          time="{{ time }}" 
+          slot="label" 
+          class="count-content"
+          format="{{timeContent}}"/>
+      </van-cell>
+    </view>
+  </view>
+  <view class="order-item">
+    <view class="order-address">
+      <view class="person-info">
+        <!-- <van-icon name="location-o" /> -->
+        <view>{{consignee}}</view>
+        <text>{{mobile}}</text>
+      </view>
+      <view class="address-info">{{address}}</view>
+    </view>
+    <van-card
+      wx:for="{{orderInfo.goods_info}}"
+      wx:key="goodsIndex"
+      wx:for-item="goodsItem"
+      custom-class="{{index === 0 ? 'goods-card radius-top-16': 'goods-card'}} "
+      title-class="goods-title"
+      num="{{goodsItem.goods_num}}"
+      price="{{goodsItem.goods_price}}"
+      title="{{goodsItem.goods_name}}"
+      desc="{{goodsItem.unit?'规格：'+goodsItem.unit:''}}"
+      thumb="{{ goodsItem.goods_image  }}"
+    />
+    <!-- 价格栏 -->
+    <view class="price-column radius-bottom-16">
+      <view class="goods-num">共{{orderInfo.goods_count}}件商品，</view>
+      <view class="goods-price-label">合计</view>
+      <view class="goods-price">￥{{orderInfo.total_price}}</view>
+      <view class="goods-express">(含运费￥{{orderInfo.freight}})</view>
+    </view>
+  </view>
+  <view class="pay-info">
+    <view class="pay-info-order">
+      <view class="pay-title">
+        <view class="line"></view>
+        <text>订单信息</text>
+      </view>
+      <view class="pay-info-item">
+        <view class="pay-info-item-title">订单编号：</view>
+        <view class="pay-info-item-content">{{orderInfo.order_sn}}</view>
+        <view class="copy-btn" bindtap="copy">复制</view>
+      </view>
+      <view class="pay-info-item">
+        <view class="pay-info-item-title">创建时间：</view>
+        <view class="pay-info-item-content">{{orderInfo.created_at}}</view>
+      </view>
+      <view class="pay-info-item flex-text">
+        <view class="pay-info-item-title">订单备注：</view>
+        <view class="pay-info-item-content">{{orderInfo.user_note || ''}}</view>
+      </view>
+    </view>
+  </view>
+
+  <order-operate orderInfo="{{orderInfo}}" bindreload="reload"></order-operate>
+</view>

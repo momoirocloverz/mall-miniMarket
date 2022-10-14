@@ -1,0 +1,127 @@
+<!--pages/buyer/shopcart/index.wxml-->
+<view class="container">
+  <!-- 编辑状态 -->
+  <view class='editWrap' wx:if="{{!isEmpty}}">
+    <text bindtap='editHandle'>{{bCompile ? '完成' : '编辑'}}</text>
+  </view>
+  <!-- 商品列表 -->
+  <view class="goods-info" wx:if="{{!isEmpty}}">
+    <view 
+      class='goods-list' 
+      wx:for="{{goodsList}}"
+      wx:key="goodsIndex"
+      wx:for-item="goodsItem"
+      wx:for-index="goodsIndex">
+        <!-- 选择 完成和编辑 -->
+        <view class='select-btn' 
+          bindtap='isShow' 
+          data-goodsItem="{{goodsItem}}" 
+          data-goodsIndex="{{goodsIndex}}">
+          <!-- 编辑状态 -->
+          <view wx:if="{{!bCompile}}">
+            <image 
+              src="{{goodsItem.is_selected == 1 ? '../../../lib/image/buyer/shopcart/select.png' : '../../../lib/image/buyer/shopcart/circle.png'}}"
+              lazy-load="{{true}}"
+              class="seleted-btn"
+            ></image>
+          </view>
+          <!-- 完成状态 -->
+          <view wx:if="{{bCompile}}">
+            <image
+              src="{{ goodsItem.is_del == 1 ? '../../../lib/image/buyer/shopcart/select.png' : '../../../lib/image/buyer/shopcart/circle.png'}}"  
+              lazy-load="{{true}}" 
+              class="seleted-btn" 
+            ></image>
+          </view>
+        </view>
+        <!-- 商品信息 -->
+        <view class="select-goods" data-goodsItem="{{goodsItem}}" data-goodsIndex="{{goodsIndex}}" bindlongtap="delete" bindtouchstart="touchStart" bindtouchend="touchEnd">
+          <view class="goods-img">
+            <view class="count-warning-tag" wx:if="{{goodsItem.goods_count > goodsItem.goods_info.store_count}}">库存不足</view>
+            <image
+              mode="widthFix"
+              src="{{goodsItem.goods_info.slide_image[0]+'?x-oss-process=image/resize,m_lfit,w_180'}}"
+              data-goodsItem="{{goodsItem}}"
+              lazy-load="{{true}}"
+              bindtap='toGoodsDetail'>
+            </image>
+          </view>
+          <!-- 基础信息 -->
+          <view class="goods-wrap">
+            <view 
+              class='goods-info-up'
+              data-goodsItem="{{goodsItem}}" 
+              bindtap='toGoodsDetail'>
+              <view class='goods-name'>
+                {{goodsItem.goods_info.goods_name}}
+              </view>
+            </view>
+            <view class="count-warning" wx:if="{{goodsItem.goods_count > goodsItem.goods_info.store_count}}">
+              剩余库存：{{goodsItem.goods_info.store_count}}
+            </view>
+            <view class="goods-info-down">
+              <text class='goods-price'>￥{{goodsItem.goods_info.price}}</text>
+              <view class="goods-num-cont">
+                <image 
+                  src="../../../lib/image/buyer/shopcart/delete.png" 
+                  class="delete-btn"
+                  wx:if="{{bCompile}}" 
+                  data-goodsItem="{{goodsItem}}" 
+                  bindtap='deleteGoods'
+                ></image>
+                <num-bar 
+                  wx:if="{{!bCompile}}"
+                  goodsNum="{{goodsItem.goods_count}}"
+                  goodsPrice="{{goodsItem.price}}"
+                  cartId="{{goodsItem.cart_id}}"
+                  goodsItem="{{goodsItem}}"
+                  goodsIndex="{{goodsIndex}}"
+                  changeGoods="{{changeGoods}}"
+                  data-goodsItem="{{goodsItem}}" 
+                  data-goodsIndex="{{goodsIndex}}"
+                  binddeleteGoods="deleteGoods"
+                  bindaddNum="addNum" 
+                  bindreduceNum="reduceNum"
+                  bindchangeNum="changeNum"
+                  bindblur="changeNum"
+                >
+                </num-bar>
+              </view>
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+  <!-- 空购物车 -->
+  <is-empty 
+    image="https://img.phbjx.com/test/c1790652d8eda4bb0c5b8808c862291b.png" 
+    text="购物车是空的，去逛逛你喜欢的商品吧~"
+    wx:if="{{isEmpty}}" 
+    margin="100rpx auto 0rpx;">
+  </is-empty>
+  <!-- 去首页逛逛 -->
+  <view 
+    class="go-btn" 
+    bindtap="toIndex"
+    wx:if="{{isEmpty}}" 
+  >去首页逛逛</view>
+    <!-- 底部操作栏 -->
+  <view class='controls' wx:if="{{isEmpty == 0}}">
+    <view class='controls-select' bindtap='checkAll'>
+      <image
+        src="{{ bWatchAll ? '../../../lib/image/buyer/shopcart/select.png' : '../../../lib/image/buyer/shopcart/circle.png'}}"  
+        lazy-load="{{true}}" 
+        class="seleted-btn" 
+      ></image>
+      <text>全选</text>
+    </view>
+    <view class='controls-price' wx:if="{{bCompile == false}}">
+      <text>合计:</text>
+      <text class='controls-total'>￥{{totalInfo}}</text>
+    </view>
+    <view class="{{bCompile ? 'controls-delete' : 'settlement'}}" 
+      bindtap='deleteAllorGoPay'>
+      {{bCompile ? '删除': '结算 ('+selectCount+')'}}
+    </view>
+  </view>
+</view>

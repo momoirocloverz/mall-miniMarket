@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "选择分类",
+  "usingComponents": {
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

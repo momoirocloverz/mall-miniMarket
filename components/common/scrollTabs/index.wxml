@@ -1,0 +1,21 @@
+<!--components/common/scrollTabs/index.wxml-->
+<scroll-view 
+  scroll-x="true" 
+  class="scroll-view-x" 
+  scroll-with-animation="true" 
+  scroll-left='0' 
+  bindscroll="getleft"
+>
+  <view class="channel-list" style="width:{{list.length * 180 + 'rpx'}}">
+    <view 
+      wx:for="{{list}}" 
+      wx:key="index" 
+      bindtap="choose" 
+      data-item="{{item}}" 
+      class="tab-item"
+    >
+      <view style="color: {{channelStyle.text_color ? channelStyle.text_color : '#333'}}" class="tab-text">{{item.category_name}}</view>
+      <view class="tab-line"></view>
+    </view>
+  </view>
+</scroll-view>

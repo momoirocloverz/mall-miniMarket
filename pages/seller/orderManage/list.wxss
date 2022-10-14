@@ -1,0 +1,217 @@
+/* pages/buyer/order/list.wxss */
+.container{
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: #F5F7FA;
+  padding: 90rpx 0;
+}
+.goods-card{
+  background-color: #ffffff!important;
+}
+.goods-title{
+  font-weight: 500!important;
+  font-size: 26rpx!important;
+}
+.title-item{
+  color: #666666;
+  width: 280rpx!important;
+}
+.title-active{
+  color: #F76925!important;
+}
+.value-item {
+  font-weight: 700;
+  color: #333333!important;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+}
+.order-item {
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+}
+/* 价格栏 */
+.price-column {
+  display: flex;
+  font-size: 28rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #ffffff;
+  padding: 30rpx;
+}
+.goods-num {
+  font-weight: 400;
+  color: #999999;
+}
+.goods-price-label {
+  font-weight: 500;
+  color: #333333;
+}
+.goods-price {
+  font-weight: 700;
+  color: #333;
+  font-size: 36rpx;
+  line-height: 36rpx;
+}
+.goods-express {
+  font-weight: 400;
+}
+.button-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rpx 30rpx 20rpx 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.button-wrap view {
+  width: 150rpx;
+  height: 60rpx;
+  background: #ffffff;
+  
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.button-wrap .send {
+  border: 1rpx solid #f76925;
+  color: #f76925;
+}
+.button-wrap .cancle {
+  border: 1rpx solid #999;
+  color: #999;
+}
+.button-wrap .agree {
+  border: 1rpx solid #f76925;
+  color: #f76925;
+  margin-left: 20rpx;
+}
+.button-wrap .refuse {
+  border: 1rpx solid #999;
+  color: #999;
+  margin-left: 20rpx;
+}
+/* 导航 */
+.list-tops{
+  width:100%;
+  position: fixed;
+  top: 0;
+  background:#fff;
+  z-index:99;
+}
+.order-nav{
+  height:80rpx;
+  display: flex;
+  align-items: center;
+  border-bottom:2rpx solid #efefef;
+}
+.order-nav-item{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:28rpx;
+  height:100%;
+  position: relative;
+}
+.order-nav-item view{
+  background:#FFD339;
+  width:72rpx;
+  height:6rpx;
+  position: absolute;
+  left:50%;
+  bottom:0;
+  margin-left:-36rpx;
+}
+.van-card__price {
+  font-size: 34rpx !important;
+  color: #333 !important;
+}
+.van-card__price-integer {
+  font-size: 34rpx !important;
+}
+.order-top{
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0 30rpx;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+}
+.order-top-time{
+  font-size: 28rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #666666;
+}
+.order-top-status{
+  font-size: 30rpx;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #333333;
+}
+
+.dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+.dialog .content {
+  width: 500rpx;
+  height: 330rpx;
+  border-radius: 16rpx;
+  background: #fff;
+  margin: 40% auto 0;
+  position: relative;
+}
+.dialog .content .title {
+  font-size: 32rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  line-height: 98rpx;
+}
+.dialog .content input {
+  width: 380rpx;
+  height: 70rpx;
+  border: 1px solid #CCCCCC;
+  font-size: 28rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+}
+.dialog .content .handle {
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  border-top: 1px solid #f3f6f9;
+}
+.dialog .content .handle view {
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  width: 100%;
+}
+.dialog .content .handle view:nth-of-type(2) {
+  color: #007AFF;
+  border-left: 1px solid #f3f6f9;
+}

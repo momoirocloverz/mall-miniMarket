@@ -1,0 +1,66 @@
+/* pages/seller/fund/confirm.wxss */
+.outer {
+  min-height: 100vh;
+  background: #F5F5F5;
+  overflow: hidden;
+  padding: 0 32rpx;
+}
+image {
+  width: 100%;
+  display: block;
+  margin: 32rpx auto 0;
+}
+.amount {
+  height: 268rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  margin: 24rpx auto 0;
+  padding: 0 30rpx;
+  overflow: hidden;
+}
+.amount .title {
+  font-size: 28rpx;
+  color: #141414;
+  margin-top: 24rpx;
+}
+.amount .input {
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 16rpx 0;
+  height: 82rpx;
+  font-family: DINPro-Medium, DINPro;
+  font-weight: 500;
+  color: #333;
+}
+.amount .input text {
+  font-size: 48rpx;
+  line-height: 64rpx;
+}
+.amount .input input {
+  font-size: 64rpx;
+  font-family: DINPro-Medium, DINPro;
+  height: 66rpx;
+}
+.take-all {
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.take-all text {
+  color: #2A6CC9;
+}
+.confirm {
+  margin-top: 100rpx;
+}
+
+.dialog-cont {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 50rpx;
+  padding: 46rpx 60rpx;
+  text-align: center;
+}
+.dialog-cont text {
+  color: #F76925;
+}

@@ -1,0 +1,190 @@
+/* pages/buyer/order/detail.wxss */
+.container{
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+}
+.order-top{
+  height: 410rpx;
+}
+.order-status{
+  background: linear-gradient( #fc8a5d 0%, #ec4706 100%);
+  height: 260rpx;
+  padding: 52rpx 30rpx 0 30rpx;
+}
+.status-cell{
+  font-size: 36rpx!important;
+  color: #ffffff!important;
+  background: rgba(0, 0, 0, 0)!important;
+}
+.custom-icon{
+  font-size:  58rpx;
+}
+.custom-icon image{
+  width: 65rpx!important;
+  height: 65rpx!important;
+}
+.goods-card{
+  background-color: #ffffff!important;
+}
+.goods-title{
+  font-weight: 500!important;
+  font-size: 26rpx!important;
+}
+.label-text{
+  color: #ffffff!important;
+
+}
+.order-address{
+  width: 630rpx;
+  min-height: 110rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin: 0 auto 20rpx;
+  padding: 30rpx;
+
+}
+.person-info{
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+}
+.person-info image{
+  width: 29rpx;
+  height: 33rpx;
+  margin-right: 10rpx;
+}
+.person-info text{
+  color: #999;
+  font-weight: 400;
+  margin-left: 16rpx;
+}
+.address-info{
+  width: 550rpx;
+  margin-left: 40rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #222222;
+  word-break: break-all;
+}
+.order-item{
+  padding: 20rpx 30rpx;
+  margin: 0;
+  border-radius: 20rpx;
+  position: relative;
+  top: -200rpx;
+}
+/* 价格栏 */
+.price-column{
+  display: flex;
+  font-size: 28rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #ffffff;
+  padding: 30rpx;
+}
+.goods-num{
+  font-weight: 400;
+  color: #999999;
+}
+.goods-price-label{
+  font-weight: 500;
+  color: #333333;
+}
+.goods-price{
+  font-weight: 700;
+  color: #F11D09;
+}
+.goods-express{
+  font-weight: 400;
+}
+.pay-info{
+  font-size:26rpx;
+  padding:10rpx 26rpx;
+  margin: 0 30rpx 200rpx;
+  background:#fff;
+  color:#3c3c3c;
+  border-radius: 10rpx;
+  position: relative;
+  top: -200rpx;
+}
+.pay-info-order{
+  background:#fff;
+  padding:12rpx 0 22rpx 16rpx;
+}
+.pay-info-item{
+  display: flex;
+  padding: 10rpx 0;
+  align-items: center;
+}
+.pay-info-item-content{
+  color:#656565;
+  margin: 0 30rpx 0 16rpx;
+  flex: 1;
+}
+.pay-info-button{
+  height:40rpx;
+  line-height:40rpx;
+  padding:0 23rpx;
+}
+.pay-info-button image{
+  width: 26rpx;
+  height: 26rpx;
+}
+.pay-info-item-title{
+  width: 120rpx;
+}
+.flex-text{
+  align-items: flex-start;
+}
+.order-bottom{
+  box-shadow:0px 1px 1px 1px rgba(217,217,217,0.6);
+  position: fixed;
+  background:#fff;
+  left:0;
+  bottom:0;
+  width:100%;
+  box-sizing:border-box;
+  display: flex;
+  padding: 0 26rpx;
+  justify-content: flex-end;
+  align-items: center;
+}
+.order-bottom icon{
+  font-size:42rpx;
+  color:#3C3C3C;
+}
+.order-bottom button{
+  padding:0 30rpx 0 0;
+  margin-right:auto;
+}
+.pay-title{
+  display: flex;
+  align-items: center;
+  color: #222222;
+}
+.pay-title image {
+  width: 25rpx;
+  height: 31rpx;
+  margin-right: 10rpx;
+}
+.count-content view{
+  color: #ffffff;
+}
+.pay-border{
+  width: 6rpx;
+  height: 29rpx;
+  background: #F1571B;
+  margin-right: 10rpx;
+}
+.van-card__bottom .van-card__price, .van-card__price .van-card__price-integer {
+  font-size: 34rpx;
+}
+.order-status .van-cell {
+  padding-bottom: 0rpx;
+}
+.container .calcle-reason{
+  padding-left: 30rpx;
+  color: #fff;
+}

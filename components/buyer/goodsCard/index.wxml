@@ -1,0 +1,32 @@
+<!--components/buyer/goodsCard/index.wxml-->
+<view class="goods-card" bindtap="goDetail">
+  <view class="img-box">
+    <image 
+      src="{{goods.image + '?x-oss-process=image/resize,w_335'}}" 
+      mode="{{goods.image ? 'aspectFill' : ''}}" 
+      class="goods-image"
+      lazy-load="{{true}}"
+    />
+    <view class="poster" wx:if="{{!goods.store_count}}"></view>
+    <image 
+      class="no-count" 
+      src="https://img.hzanchu.com/acimg/e4249c932a79ccc74e67563395ef216a.png" 
+      wx:if="{{!goods.store_count}}"
+    ></image>
+  </view>
+  
+  <view class="goods-info">
+    <view class="goods-title">{{goods.goods_name}}</view>    
+    <view class="price-wrap">
+      <view class="goods-price">￥{{ goods.price}}</view>
+      <image 
+        src="https://img.hzanchu.com/acimg/8d0090c7a68b3d1a925b0e6e14ac0029.png" 
+        class="add-shopcart"
+        catchtap="addCart"
+        data-item="{{goods}}"
+        wx:if="{{goods.store_count}}"
+      ></image>
+      <view wx:else class="no-count-btn">补货中</view>
+    </view>
+  </view>
+</view>

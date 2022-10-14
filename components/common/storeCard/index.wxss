@@ -1,0 +1,84 @@
+/* components/buyer/storeCard/index.wxss */
+.store-card{
+  display: block;
+  background: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 16rpx;
+  height: 144rpx;
+  box-sizing: border-box;
+  box-shadow: -1px 2px 8px 0 rgba(12,1,0,0.13); 
+  padding: 30rpx;
+  overflow: hidden;
+}
+.store-card .store-info {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.store-card .store-info .store-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+.store-card .store-info .store-title{
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+}
+.store-card .store-info .store-title-text {
+  padding: 0 12rpx 14rpx;
+  font-weight: 700;
+  font-size: 26rpx;
+  color: #222222;
+}
+.store-card .store-info .store-title-desc {
+  padding-left: 12rpx;
+  font-weight: Regular;
+  font-size: 24rpx;
+  color: #666666;
+}
+/* .store-card .store-info .store-unCollection {
+  border: 1px solid #E5E5E5;
+  border-radius: 100rpx;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  color: #999999;
+  position: absolute;
+  right: 0;
+  top: 0;
+} */
+.store-card .store-info  .store-more {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #DCDCDC;
+  height: 84rpx;
+  line-height: 84rpx;
+}
+.go-store {
+  line-height: 84rpx;
+  margin-right: 10rpx;
+  color: #FB7C01;
+}
+.collection {
+  position: absolute;
+  background-color: #FB7C01;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  width: 70rpx;
+  height: 144rpx;
+  top: -30rpx;
+  right: -30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: width 0.2s ease-out, opacity 0.2s ease-in, visibility 0.2s ease-in;
+}
+.collection .text {
+  text-align: center;
+  color: #FFF;
+}
+.display-none {
+  width: 0;
+  opacity: 0;
+  transition: width 0.2s ease-out;
+}

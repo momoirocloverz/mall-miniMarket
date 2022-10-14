@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "编辑商品详情图",
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index",
+    "drag": "/components/common/drag/index"
+  }
+}

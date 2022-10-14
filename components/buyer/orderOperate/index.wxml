@@ -1,0 +1,32 @@
+<!--components/buyer/orderOperate/index.wxml-->
+<view class="button-list" style="margin-top:{{from=='list'?'20rpx':''}}">
+  <view class="support-right"></view>
+  <view class="button-item">
+    <form bindsubmit="cancelOrder" report-submit>
+      <button class="normal" wx:if="{{obj.status == 3 && obj.is_apply_ensure != 1 }}" hover-class="hover-btn" form-type="submit">申请退款</button>
+    </form>
+    <form bindsubmit="goPay" report-submit>
+      <button class="confirm" wx:if="{{obj.status == 0 }}" hover-class="hover-btn" form-type="submit">继续支付</button>
+    </form>
+    <form bindsubmit="cancel" report-submit>
+      <button class="normal" wx:if="{{obj.status == 0 && from == 'detail' }}" hover-class="hover-btn" form-type="submit">取消订单</button>
+    </form>
+    <form bindsubmit="remindSend" report-submit>
+      <button class="cancle" wx:if="{{obj.status == 3 }}" hover-class="hover-btn" form-type="submit">提醒发货</button>
+    </form>
+      <form bindsubmit="delOrder" report-submit>
+      <button class="normal" wx:if="{{obj.status == 1 || obj.status == 2 || obj.status == 6 }}" hover-class="hover-btn" form-type="submit">删除订单</button>
+    </form>
+    <!-- <form bindsubmit="goPackage" report-submit>
+      <button class="normal" wx:if="{{obj.status == 4 || obj.status == 6 }}" hover-class="hover-btn" form-type="submit">查看物流</button>
+    </form> -->
+      <!-- <form bindsubmit="goPackage" report-submit>
+      <button class="normal" wx:if="{{obj.status == 0 || obj.status == 4 || obj.status == 6}}" form-type="submit">申请退款</button>
+    </form> -->
+    <!-- <view class="normal" wx:if="{{obj.status == 'waybill'}}" catchtap="goPackage"><button class="normal" >申请退款</button></view> -->
+    <form bindsubmit="confirmOrder" report-submit>
+      <button class="confirm" wx:if="{{obj.status == 4 }}" hover-class="hover-btn" form-type="submit">确认收货</button>
+    </form>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

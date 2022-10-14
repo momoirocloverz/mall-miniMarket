@@ -1,0 +1,119 @@
+{
+  "pages": [
+    "pages/seller/entryStore/index",
+    "pages/seller/store/index",
+    "pages/seller/index/index",
+    "pages/seller/index/indexShow",
+    "pages/common/login/index",
+    "pages/seller/addGoods/add",
+    "pages/seller/addGoods/type",
+    "pages/seller/addGoods/detail",
+    "pages/seller/store/manager",
+    "pages/seller/store/fixName",
+    "pages/seller/store/fixDescript",
+    "pages/seller/store/authInfo",
+    "pages/seller/store/fixPhone",
+    "pages/seller/store/fixHeadImg",
+    "pages/seller/goodsManage/allGoods",
+    "pages/seller/goodsManage/allTypes",
+    "pages/seller/goodsManage/typeGoods",
+    "pages/seller/goodsManage/goodsDetail",
+    "pages/seller/fund/index",
+    "pages/seller/fund/detail",
+    "pages/seller/fund/record",
+    "pages/seller/fund/bankDetail",
+    "pages/seller/fund/confirm",
+    "pages/seller/message/index",
+    "pages/seller/afterSale/index",
+    "pages/seller/afterSale/detail",
+    "pages/seller/orderManage/list",
+    "pages/seller/orderManage/detail",
+    "pages/seller/shipments/list",
+    "pages/seller/shipments/detail",
+    "pages/seller/home/index",
+    "pages/seller/mine/index",
+    "pages/common/setting/setting",
+    "pages/seller/policy/service",
+    "pages/seller/policy/privacy",
+    "pages/common/share/shareStore",
+    "pages/common/share/shareGoods",
+    "pages/seller/store/mainImage",
+    "pages/seller/store/shareImage",
+    "pages/seller/store/authInfoImg/idCardFrontImage",
+    "pages/seller/store/authInfoImg/idCardBackImage",
+    "pages/seller/store/authInfoImg/licenseImage",
+    "pages/seller/concat/concat",
+    "pages/seller/addGoods/goodsImage/index",
+    "pages/buyer/index/index",
+    "pages/buyer/store/index",
+    "pages/buyer/shopcart/index",
+    "pages/buyer/mine/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "本家鲜",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/buyer/index/index",
+        "text": "首页",
+        "selectedIconPath": "/lib/image/buyer/nav/index-s.png",
+        "iconPath": "/lib/image/buyer/nav/index.png"
+      },
+      {
+        "pagePath": "pages/buyer/store/index",
+        "text": "足迹",
+        "selectedIconPath": "/lib/image/buyer/nav/shop-s.png",
+        "iconPath": "/lib/image/buyer/nav/shop.png"
+      },
+      {
+        "pagePath": "pages/buyer/shopcart/index",
+        "text": "购物车",
+        "selectedIconPath": "/lib/image/buyer/nav/shopcart-s.png",
+        "iconPath": "/lib/image/buyer/nav/shopcart.png"
+      },
+      {
+        "pagePath": "pages/buyer/mine/index",
+        "text": "我的",
+        "selectedIconPath": "/lib/image/buyer/nav/mine-s.png",
+        "iconPath": "/lib/image/buyer/nav/mine.png"
+      }
+    ]
+  },
+  "subpackages":[
+    {
+      "root":"buyerInfo",
+      "name":"buyerInfo",
+      "independent": false,
+      "pages": [
+        "buyer/shopLocation/index",
+        "buyer/goods/index",
+        "buyer/order/confirm",
+        "buyer/order/list",
+        "buyer/order/detail",
+        "buyer/pay/success",
+        "buyer/address/list",
+        "buyer/address/detail",
+        "buyer/refunds/list",
+        "buyer/refunds/create",
+        "buyer/policy/service",
+        "buyer/policy/privacy",
+        "buyer/collection/index",
+        "buyer/refunds/detail",
+        "buyer/licensePhoto/index"
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

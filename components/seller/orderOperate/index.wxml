@@ -1,0 +1,14 @@
+<view class="nav-bottom">
+  <button class="agree" wx:if="{{orderInfo.status === 5}}" data-item="{{orderItem}}" bindtap="agree">同意</button>
+  <button class="refuse" wx:if="{{orderInfo.status === 5}}" data-item="{{orderItem}}" bindtap="refuse">拒绝</button>
+</view>
+<view class="dialog" wx:if="{{showDialog}}">
+  <view class="content">
+    <view class="title">{{dialogType ==='refuse'?'拒绝原因':'取消订单原因'}}</view>
+    <input value="{{reason}}" placeholder="{{dialogType ==='refuse'?'请填写拒绝原因':'请填写取消订单原因'}}" bindinput="inReason"></input>
+    <view class="handle">
+      <view bindtap="quxiao">取消</view>
+      <view bindtap="queding">确定</view>
+    </view>
+  </view>
+</view>

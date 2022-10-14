@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+    <view class="head">
+      <text class="date">2020/7/17 10:25:23</text>
+      <text class="state">售后中</text>
+    </view>
+    <view class="order-code">
+      订单编号：<text>NB2020391256351225</text>
+    </view>
+    <view class="refund">
+      退款金额：<text>¥20.00</text>
+    </view>
+    <view class="operation">
+      <view>去处理</view>
+    </view>
+  </view>
+</view>

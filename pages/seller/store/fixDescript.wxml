@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="content">
+    <textarea maxlength="40" value="{{value}}" bindinput="changeDes"></textarea>
+  </view>
+  <view class="limit">
+    还能输入 <text>{{limit}}</text> 个字
+  </view>
+  <view class="save" catchtap="submit">保存</view>
+</view>

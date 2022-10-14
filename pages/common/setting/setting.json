@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "设置",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index"
+  }
+}

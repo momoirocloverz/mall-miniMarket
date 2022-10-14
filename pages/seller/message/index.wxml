@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="msg-item" wx:for="{{msgList}}" wx:key="index">
+    <view class="top">
+      <view>
+        <image src="https://img.hzanchu.com/acimg/1f1aec61358d4a5106ede69eb1c35850.png?x-oss-process=image/resize,l_300"></image>
+        <text class="title">{{item.title}}</text>
+      </view>
+      <text class="date">{{item.created_at}}</text>
+    </view>
+    <view class="msg-body">
+      {{item.content}}
+    </view>
+  </view>
+  <!-- 到底 -->
+  <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+  <is-empty wx:if="{{isEmpty}}" image="https://img.hzanchu.com/acimg/d6ed0083d83f6466f6ea2b7273035430.png" text="暂无消息" margin="286rpx 0 0 0"></is-empty>
+  <!--底部-->
+  <sell-footer active="{{1}}"></sell-footer>
+</view>

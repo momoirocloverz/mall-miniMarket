@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "is-end": "/components/common/isEnd/index",
+    "is-empty": "/components/common/isEmpty/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

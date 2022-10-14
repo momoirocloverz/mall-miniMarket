@@ -1,0 +1,13 @@
+<view class="login">
+  <view class="logo">
+    <image src="https://img.hzanchu.com/acimg/f82c24e6ddc44768d4a8a690dcb650a6.png"></image>
+  </view>
+  <image class="login-line" src="https://img.hzanchu.com/acimg/ac531de8a932fcddf41fb641b5fa243e.png"></image>
+  <button class="wx-login" open-type='getPhoneNumber' bindgetphonenumber='getTel'> 
+    微信快捷登录
+  </button>
+  <view class="protocol">
+    登录即为同意<text bindtap="toPrivacy">《隐私政策》</text>及<text bindtap="toService">《服务协议》</text>
+  </view>
+  <author-dialog show="{{showAuthor}}" title="温馨提示" content="请点击确定按钮，授权之后才能进行登录"></author-dialog>
+</view>

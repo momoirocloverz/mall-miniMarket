@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "登录",
+  "navigationBarBackgroundColor": "#FFF2C3",
+  "usingComponents": {
+    "author-dialog": "/components/common/authorDialog/index"
+  }
+}

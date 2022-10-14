@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "提现记录",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "is-end": "/components/common/isEnd/index"
+  }
+}

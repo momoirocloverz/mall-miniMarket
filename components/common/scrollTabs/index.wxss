@@ -1,0 +1,30 @@
+.channel-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 90rpx;
+}
+.tab-item{
+  position: relative;
+  width: 180rpx;
+  text-align: center;
+  line-height: 0;
+  margin: 15rpx 0 14rpx 0;
+}
+.channel-list .tab-text {
+  font-size:30rpx;
+  display: block;
+  font-family:PingFang SC;
+  line-height: 32rpx;
+  margin-top: 10rpx;
+}
+.tab-line{
+  width: 40rpx;
+  height: 6rpx;
+  position: absolute;
+  bottom: -15rpx;
+  left: 70rpx;
+  z-index: 1;
+  border-radius: 3rpx;
+  background: #FA720F;
+}

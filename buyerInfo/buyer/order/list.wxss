@@ -1,0 +1,191 @@
+/* pages/buyer/order/list.wxss */
+.container{
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding: 70rpx 0;
+  background: #F5F7FA;
+  box-sizing: border-box;
+}
+.goods-card{
+  background-color: #ffffff!important;
+}
+.goods-title{
+  font-weight: 500!important;
+  font-size: 26rpx!important;
+}
+.title-item{
+  color: #666666;
+  font-size: 30rpx;
+}
+.title-active{
+  color: #F76925!important;
+}
+.value-item{
+  font-weight: 700;
+  color: #333333!important;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+
+}
+.order-item{
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  border-radius: 20rpx;
+}
+/* 价格栏 */
+.price-column{
+  display: flex;
+  font-size: 28rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #ffffff;
+  padding: 30rpx 30rpx 0;
+}
+.goods-num{
+  font-weight: 400;
+  color: #999999;
+}
+.goods-price-label{
+  font-weight: 500;
+  color: #333333;
+}
+.goods-price{
+  font-weight: 700;
+  color: #F11D09;
+}
+.goods-express{
+  font-weight: 400;
+}
+.button-wrap{
+  background: #ffffff;
+  padding: 10rpx 30rpx 20rpx;
+}
+.arrow-left view{
+  color: #333333!important;
+}
+/* 商品card */
+.order-card{
+  width: 630rpx;
+  height: 180rpx;
+  display: flex;
+}
+.card-img{
+  width: 180rpx;
+  height: 180rpx;
+}
+/* 导航 */
+.list-tops{
+  width:100%;
+  position: fixed;
+  top: 0rpx;
+  background:#fff;
+  z-index:99;
+}
+.order-nav{
+  height:80rpx;
+  display: flex;
+  align-items: center;
+  border-bottom:2rpx solid #efefef;
+}
+.order-nav-item{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:28rpx;
+  height:100%;
+  position: relative;
+}
+.order-nav-item view{
+  background:#FA720F;
+  width:72rpx;
+  height:6rpx;
+  position: absolute;
+  left:50%;
+  bottom:0;
+  margin-left:-36rpx;
+}
+.order-top {
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0 30rpx;
+}
+.order-store-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+.order-store-name {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  display: flex;
+  align-items: center;
+}
+.order-store-name text {
+  margin-left: 10rpx;
+}
+.order-top-time{
+  font-size: 28rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #666666;
+  background: #fff;
+  padding: 0 30rpx;
+}
+.order-top-status{
+  font-size: 30rpx;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #333333;
+}
+.tabs-box{
+  position: fixed;
+  top: 128rpx!important;
+}
+/* 自定义导航 */
+.nav-content{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 128rpx;
+  background: #fff;
+  z-index: 10;
+}
+.nav-warp{
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  position: relative
+}
+.nav-left{
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 60rpx;
+  height: 58rpx;
+  padding-top: 30rpx;
+  padding-left: 30rpx;
+}
+.nav-title{
+  width: 100%;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #333333;
+}
+.nav-sticky{
+  width: 100%;
+}
+
+.van-card__price {
+  font-size: 34rpx !important;
+  color: #333 !important;
+}
+.van-card__price-integer {
+  font-size: 34rpx !important;
+}

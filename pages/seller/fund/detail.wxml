@@ -1,0 +1,26 @@
+<view class="container">
+  <!-- <view class="tip">注：使用微信支付工具，微信会收取0.6%的手续费, 如有变动，以微信官方通知为准。</view> -->
+  <view class="amount">
+    <text>可提现金额：</text>
+    <text>￥{{account}}</text>
+  </view>
+  <view class="detail-item" wx:for="{{detailList}}" wx:key="index">
+    <view class="left">
+      <view>
+        <text>订单号：{{item.order_sn}}</text>
+        <text>{{item.order_status}}</text>
+      </view>
+      <view>
+        <text>下单时间：{{item.created_at}}</text>
+        <text>+{{item.order_account}}</text>
+      </view>
+      <view>
+        <text style="margin-right: 40rpx;">订单金额：￥{{item.pay_price}}</text>
+      </view>
+      <!-- <view>
+        <text>微信收取手续费：￥{{item.poundage}}</text>
+      </view> -->
+    </view>
+    <!-- <view class="right">+{{item.order_account}}</view> -->
+  </view>
+</view>

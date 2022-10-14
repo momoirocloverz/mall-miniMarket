@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "售后管理",
+  "usingComponents": {
+    "is-empty": "/components/common/isEmpty/index",
+    "is-end": "/components/common/isEnd/index"    
+  }
+}

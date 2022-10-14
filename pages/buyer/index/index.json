@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "本家鲜",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "is-end": "/components/common/isEnd/index",
+    "is-empty": "/components/common/isEmpty/index",
+    "goods-card": "/components/buyer/goodsCard/index",
+    "scroll-tabs": "/components/common/scrollTabs/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "nav-bar": "/components/common/navBar/index"
+  }
+}

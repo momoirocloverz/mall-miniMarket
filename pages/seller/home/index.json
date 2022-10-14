@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "店铺预览",
+  "onReachBottomDistance": 50,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "is-end": "/components/common/isEnd/index",
+    "is-empty": "/components/common/isEmpty/index",
+    "goods-card": "/components/seller/goodsCard/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-image": "@vant/weapp/image/index",
+    "nav-bar": "/components/common/navBar/index"
+  }
+}

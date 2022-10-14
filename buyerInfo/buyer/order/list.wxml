@@ -1,0 +1,77 @@
+<view class="container" style="padding-top: 84rpx">
+  <view class="list-tops" style="top:0;">
+    <view class="order-nav">
+      <view 
+        class="order-nav-item" 
+        wx:for="{{cateList}}" 
+        wx:key="index" 
+        style="color:{{item.value==status?'#3C3C3C':'#3C3C3C'}}" 
+        bindtap="clickNav" data-item="{{item}}">
+        {{item.name}}
+        <view wx:if="{{item.value==status}}"></view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="list-wrap">
+    <view 
+      class="order-item"
+      wx:for="{{orderList}}"
+      wx:key="orderIndex"
+      wx:for-item="orderItem"
+    >
+      <view class="order-top" catchtap="goStore" data-id="{{orderItem.store_id}}">
+        <view class="order-store-name">
+          <image class="order-store-icon" src="https://img.hzanchu.com/acimg/060caefb67651f27e62a3d67458b42de.png" mode="widthFix"/>
+          <text>{{orderItem.store_name}}</text>
+          <van-icon name="arrow" color="#666"/>
+        </view>
+        <view class="{{orderItem.status === 0 ? 'order-top-status  radius-top-16' : 'order-top-status  radius-top-16 title-active' }}">{{orderType[orderItem.status].name}}</view>
+      </view>
+      <!-- <view class="order-top-time">{{orderItem.created_at}}</view> -->
+
+      <van-card
+        wx:for="{{orderItem.goods_info}}"
+        wx:key="goodsIndex"
+        wx:for-item="goodsItem"
+        data-item="{{orderItem}}"
+        custom-class="goods-card"
+        title-class="goods-title"
+        num="{{goodsItem.goods_num}}"
+        price="{{goodsItem.goods_price}}"
+        title="{{goodsItem.goods_name}}"
+        desc="{{goodsItem.unit?'规格：'+goodsItem.unit:''}}"
+        thumb="{{ goodsItem.goods_image +'?x-oss-process=image/resize,m_lfit,w_180'}}"
+        bindtap="toDetail"
+      />
+      <!-- 价格栏 -->
+      <view class="price-column">
+        <view class="goods-num">共{{orderItem.goods_count}}件商品，</view>
+        <view class="goods-price-label">合计:</view>
+        <view class="goods-price">￥{{orderItem.total_price}}</view>
+        <view class="goods-express">(含运费￥{{orderItem.freight}})</view>
+      </view>
+      <!-- 状态按钮栏 -->
+      <view class="button-wrap radius-bottom-16">
+        <order-operate
+          obj="{{orderItem}}"
+          from="list"
+          bindsetInfo="updateInfo"
+          bindreload="reloadList"
+        ></order-operate>
+      </view>
+    </view>
+    <!-- 为空 -->
+    <is-empty 
+      image="https://img.hzanchu.com/acimg/470bd8e1be1e0d946ff1d09ef167d612.png" 
+      wx:if="{{isEmpty}}" 
+      text="您还没有相关的订单哦~"
+      margin="200rpx auto 0"></is-empty>
+    <!-- 到底 -->
+    <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+  
+  </view>
+
+
+
+</view>

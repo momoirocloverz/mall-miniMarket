@@ -1,0 +1,50 @@
+/* components/numBar/index.wxss */
+@import '../../../lib/css/iconfont.wxss';
+.num-bar {
+  background: #fff;
+}
+.num-bar-up {
+  /* height: 48rpx; */
+}
+.num-bar-box {
+  height: 40rpx;
+}
+.num-bar-left {
+  height: 40rpx;
+  position: relative;
+  color:#3c3c3c;
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.num-bar-reduce, .num-bar-add {
+  width: 40rpx;
+  height: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 99;
+}
+.num-bar-reduce {
+  left: -20rpx;
+}
+.num-bar-add {
+  right: -20rpx;
+}
+.num-bar-num {
+  flex: 1;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: #FFF7E5;
+}
+.num-bar-down{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.num-bar-price{
+  font-size: 28rpx;
+  color: #DE4839;
+}

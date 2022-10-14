@@ -1,0 +1,98 @@
+<!--pages/buyer/goodsDetail/index.wxml-->
+<van-nav-bar
+  title="商品详情"
+  left-arrow
+  fixed
+  bind:click-left="onClickLeft"
+/>
+<!-- 轮播图 -->
+<view class="swiper-box">
+  <w-swiper 
+    list="{{goodsInfo.slide_image}}" 
+    goodsId="{{options.goods_id}}" 
+    height="480rpx"
+  ></w-swiper>
+</view>
+<!-- 商品基础信息 -->
+<view class="goods-base">
+  <view class="goods-top">
+    <view class="goods-price">￥{{goodsInfo.price}}</view>
+    <view class="original-price" wx:if="{{goodsInfo.original_price != '0.00'}}">￥{{goodsInfo.original_price}}</view>
+    <view class="goods-num">剩余{{goodsInfo.store_count}}件</view>
+  </view>
+  <view class="goods-middle">
+    <view class="good-title">{{goodsInfo.goods_name}}</view>
+    <button class="goods-share" bindtap="toShare">
+      <view>
+        <image src="https://img.phbjx.com/test/81d33dd2728fcf21e153e84451a95bb3.png"></image>
+        <text>分享</text>
+      </view>
+    </button>
+  </view>
+</view>
+<!-- 运费 -->
+<!-- 运费&规格 -->
+<view class="express-wrap">
+  <view class="express-row">
+    <view class="express-label">运费</view>
+    <view class="express-value border-bottom">
+      {{goodsInfo.express ? goodsInfo.express + '元' : '免运费'}}
+      <text wx:if="{{goodsInfo.freight_comment}}">（{{goodsInfo.freight_comment}}）</text>
+    </view>
+  </view>
+  <view class="express-row">
+    <view class="express-label">规格</view>
+    <view class="express-value">{{goodsInfo.unit}}</view>
+  </view>
+</view>
+<!-- 详情 -->
+<view class="goods-info">
+  <view class="goods-label">商品详情</view>
+  <view class="goods-img-box">
+    <image
+      wx:for="{{goodsInfo.info_image}}"
+      wx:key="goodsIndex"
+      wx:for-item="goodsItem"
+      src="{{goodsItem}}"
+      mode="widthFix"
+      lazy-load="{{true}}"
+    ></image>
+  </view>
+</view>
+<!-- 操作栏 -->
+<van-goods-action safe-area-inset-bottom>
+  <van-goods-action-icon 
+    icon="chat-o" 
+    bind:click="callStore" 
+    text="联系商家" 
+    icon="https://img.hzanchu.com/acimg/82267e350aec07ea5d8b3963f078ec85.png"
+    icon-class="confirm-icon"
+    text-class="confirm-icon"
+  />
+  <van-goods-action-icon 
+    icon="cart-o" 
+    bind:click="goCart" 
+    icon="https://img.hzanchu.com/acimg/bfd054d3a18b9aa9e4771a0a892e01e7.png"
+    icon-class="confirm-icon"
+    text-class="confirm-icon"
+    loading="{{goLoading}}"
+    text="购物车" 
+    info="{{goodsInfo.cart_count?goodsInfo.cart_count:''}}" 
+  />
+  <van-goods-action-button 
+    color="#ffe87e" 
+    text="加入购物车"  
+    loading="{{addLoading}}"
+    bind:click="addCart"
+    class="fast-buy"
+  />
+  <van-goods-action-button 
+    color="#FFD101" 
+    text="立即购买" 
+    loading="{{buyLoading}}"
+    bind:click="fastBuy"
+    class="fast-buy"
+  />
+</van-goods-action>
+  <!-- 拨打电话 -->
+  <van-dialog id="van-dialog" />

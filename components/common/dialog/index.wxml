@@ -1,0 +1,10 @@
+<view class="dialog-shade" catchtouchmove="true" wx:if="{{show}}">
+  <view class="dialog">
+    <view class="title">{{title}}</view>
+    <slot></slot>
+    <view class="handle">
+      <view class="cancle" bindtap="cancle">{{cancleText}}</view>
+      <view class="confirm" bindtap="confirm">{{confirmText}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,226 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="status-area" wx:if="{{formData.apply === 1 && formData.status !== 1}}">
+    <view class="status-img">
+      <image wx:if="{{formData.status === 0}}" src="https://img.hzanchu.com/acimg/03bd50cbb5e6ea9194771948d15b9d81.png">
+      </image>
+      <image wx:if="{{formData.status === 2}}" src="https://img.hzanchu.com/acimg/dee9578227a8d084a817bba7ece03da0.png">
+      </image>
+    </view>
+    <view class="status-audit" wx:if="{{formData.status === 0}}">
+      您提交的信息正在审核中~
+    </view>
+    <view class="status-fail" wx:if="{{formData.status === 2}}">
+      <view>您提交的信息审核失败！</view>
+      <view>失败原因：{{formData.auditRemark}}</view>
+    </view>
+  </view>
+  <view class="store-head">
+    <view class="title">
+      <text class="name">店铺名称</text>
+      <text class="number">{{nameWordNumber}}/12</text>
+    </view>
+    <input class="title-text" placeholder-class="placeholder-color" placeholder="请输入店铺名称" maxlength="20"
+      bindinput="recordNameWordNumber" value="{{formData.name}}" disabled="{{!isAble}}"></input>
+    <view class="line"></view>
+    <view class="title">
+      <text class="name">店铺简介</text>
+      <text class="number">{{introducWordNumber}}/40</text>
+    </view>
+    <input class="title-text" placeholder-class="placeholder-color" placeholder="请输入店铺简介" maxlength="40"
+      bindinput="recordIntroducWordNumber" value="{{formData.introduc}}" disabled="{{!isAble}}"></input>
+    <!-- <textarea
+      class="title-text"
+      placeholder="请输入店铺简介"
+      maxlength="40"
+      bindinput="recordIntroducWordNumber"
+      value="{{formData.introduc}}"
+      disabled="{{!isAble}}"
+    ></textarea> -->
+    <view class="line"></view>
+    <view class="name padding-name">店铺头像</view>
+    <view class="add-image">
+      <van-uploader file-list="{{headList}}" bind:after-read="uploadStart" bind:before-read="beforeRead"
+        data-type="head" image-fit deletable="{{isAble}}" disabled="{{headLoading}}" preview-size="220rpx"
+        bind:delete="deletImg" max-count="1">
+      </van-uploader>
+    </view>
+  </view>
+  <view class="store-body">
+    <form catchsubmit="formSubmit">
+      <view class="item">
+        <label>经营人姓名</label>
+        <input name="name" value="{{formData.nickname}}" placeholder-class="placeholder-color" placeholder="请输入经营人姓名"
+          maxlength="10" disabled="{{!isAble}}"></input>
+      </view>
+      <view class="item">
+        <label>经营人手机号</label>
+        <input name="phone" value="{{formData.mobile}}" type="number" maxlength="11"
+          placeholder-class="placeholder-color" placeholder="请输入手机号码" disabled="{{!isAble}}"></input>
+      </view>
+      <view class="item">
+        <label>所在区域</label>
+        <view 
+          bindtap='cascadePopup'
+          wx:if="{{provinceName != '请选择'}}"
+          class='address-province'>
+          {{provinceName}}{{cityName}}{{regionName}}{{streetName}}
+        </view>
+        <view class='placeholder' style='flex:1;justify-content:flex-end;font-size:30rpx;' wx:if="{{provinceName == '请选择'}}" bindtap='cascadePopup'>请选择所在区域</view>
+        <van-icon name="arrow" color="#bbb" size="14px"/>
+      </view>
+      <view class="item address">
+        <label>店铺地址</label>
+        <view class="item-choose-address" bindtap="chooseAddress">
+          <view class="{{shopAddress?'item-choose-black':'item-choose-txt'}}">{{shopAddress?shopAddress:'请选择店铺地址'}}
+          </view>
+          <van-icon name="arrow" size="14px" />
+        </view>
+        <!-- <view
+          bindtap='cascadePopup'
+          wx:if="{{provinceName !== '请选择'}}"
+          class='address-province'>
+          {{provinceName}}{{cityName}}{{regionName}}{{streetName}}
+        </view>
+        <view
+          class='placeholder'
+          style='flex:1;justify-content: flex-end;'
+          wx:if="{{provinceName === '请选择'}}"
+          bindtap='cascadePopup'
+        >请输入地址</view> -->
+      </view>
+      <view class="item address">
+        <label>详细地址</label>
+        <input name="detail_address" maxlength="50" value="{{formData.detail_address}}" placeholder-class="placeholder-color"
+          placeholder="请输入街道、门牌号等" disabled="{{!isAble}}" wx:if="{{isAble}}"></input>
+        <view wx:if="{{!isAble}}" class="address-able">{{formData.detail_address}}</view>
+      </view>
+      <view class="item">
+        <label>主体名称</label>
+        <input name="corporate_name" value="{{formData.corporate_name}}" maxlength="50"
+          placeholder-class="placeholder-color" placeholder="请输入主体名称" disabled="{{!isAble}}"></input>
+      </view>
+      <view class="item">
+        <label>社会信用代码</label>
+        <input name="social_credit_code" value="{{formData.social_credit_code}}" maxlength="50"
+          placeholder-class="placeholder-color" placeholder="请输入社会信用代码" disabled="{{!isAble}}"></input>
+      </view>
+      <view class="item">
+        <label>工商注册号</label>
+        <input name="register_no" value="{{formData.register_no}}" maxlength="50" placeholder-class="placeholder-color" placeholder="若无工商注册号，非必填" disabled="{{!isAble}}"/>
+      </view>
+      <view class="item id-card" wx:if="{{isShowDetail}}">
+        <label>身份证正面照(国徽)</label>
+        <van-uploader file-list="{{frontList}}" class="license-upload id-card-front" bind:after-read="afterRead"
+          data-type="front" deletable="{{isAble}}" max-count="1" bind:delete="deletImg" upload-icon="">
+        </van-uploader>
+      </view>
+      <view class="item id-card" wx:if="{{isShowDetail}}">
+        <label>身份证反面照(人像)</label>
+        <van-uploader file-list="{{reverseList}}" class="license-upload id-card-back" bind:after-read="afterRead"
+          data-type="reverse" deletable="{{isAble}}" max-count="1" bind:delete="deletImg" upload-icon="">
+        </van-uploader>
+      </view>
+      <view class="item id-card" wx:if="{{isShowDetail}}">
+        <label>营业执照</label>
+        <van-uploader file-list="{{positiveList}}" class="license-upload license-license" bind:after-read="afterRead"
+          data-type="license" deletable="{{isAble}}" max-count="1" bind:delete="deletImg" upload-icon="">
+        </van-uploader>
+      </view>
+      <view class="release">
+        <button type="primary" formType="submit"
+          style="background-color: {{isAble ? '#FFD339 ' : '#D2D2D2'}}; border-radius: 50rpx; color: #fff;"
+          disabled="{{!isAble}}">{{isAble ? '提交' : '已提交'}}</button>
+      </view>
+    </form>
+  </view>
+  <!-- <view class="contact-content">
+     <view bindtap="callStore">如有疑问，请联系客服 <text>18158512049</text> </view>
+  </view> -->
+  <!-- 地址选择 -->
+  <view class="modal">
+    <view class="modal-mask {{maskVisual}}" bindtap="cascadeDismiss"></view>
+    <view animation="{{animationData}}" class="modal-content">
+      <view class="modal-header">
+        <text class="modal-title">地址</text>
+        <icon class="modal-close iconfont icon-CombinedShape" bindtap="cascadeDismiss" />
+      </view>
+      <view class="modal-body">
+        <!-- 名称 -->
+        <text class="viewpager-title {{current == 0 ? 'area-selected' : ''}}" bindtap="changeCurrent"
+          data-current="0">{{provinceName}}</text>
+        <text class="viewpager-title {{current == 1 ? 'area-selected' : ''}}" bindtap="changeCurrent"
+          data-current="1">{{cityName}}</text>
+        <text class="viewpager-title {{current == 2 ? 'area-selected' : ''}}" bindtap="changeCurrent"
+          data-current="2">{{regionName}}</text>
+        <text class="viewpager-title {{current == 3 ? 'area-selected' : ''}}" bindtap="changeCurrent"
+          data-current="3">{{streetName}}</text>
+        <!-- 列表 -->
+        <swiper class="swiper-area" current="{{current}}" duration="300" bindchange="currentChanged">
+          <!-- 省 -->
+          <block wx:if="{{province.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{province}}" wx:key="index" data-index="{{index}}" bindtap="provinceTapped">
+                  <text wx:if="{{index == provinceIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+          <!-- 市 -->
+          <block wx:if="{{city.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{city}}" wx:key="index" data-index="{{index}}" bindtap="cityTapped">
+                  <text wx:if="{{index == cityIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+          <!-- 县、区 -->
+          <block wx:if="{{region.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{region}}" wx:key="index" data-index="{{index}}" bindtap="regionTapped">
+                  <text wx:if="{{index == regionIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+          <!-- 街道 -->
+          <block wx:if="{{street.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{street}}" wx:key="index" data-index="{{index}}" bindtap="streetTapped">
+                  <text wx:if="{{index == streetIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+  <!--提交成功dialog-->
+  <van-dialog use-slot title="提交成功，正在审核中，请耐心等待~" show="{{isShowDialog}}" bind:confirm="toEntrey">
+    <view class="time-cont">倒计时 <text>{{timeSecend}}</text> 秒后将自动返回启动页</view>
+  </van-dialog>
+  <view wx:if="{{cropperVisible}}" class="control-wrap">
+    <view bindtap="cancelCropper">取消</view>
+    <view bindtap="choose">重新选择</view>
+    <view catchtap="submit" class="cropper-submit">确定</view>
+  </view>
+
+  <image-cropper id="image-cropper" limit_move="true" disable_rotate="true" width="{{250}}" height="{{250}}"
+    imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut" wx:if="{{cropperVisible}}">
+  </image-cropper>
+  <!-- 拨打电话 -->
+  <van-dialog id="van-dialog" />
+
+  <!-- 地图授权组件 -->
+  <map-dialog isAuthor="{{isAuthor}}" bind:cancelAuthor="cancelMapAuthor" bind:openSetting="openSettingInfo"/>
+</view>

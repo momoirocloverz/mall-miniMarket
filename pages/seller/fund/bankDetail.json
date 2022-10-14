@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "提现信息",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

@@ -1,0 +1,16 @@
+/* pages/buyer/mine/setting.wxss */
+.container {
+  height: 100vh;
+  background-color: #F5F7FA;
+  padding-top: 20rpx;
+}
+.version {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  margin-top: 22rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

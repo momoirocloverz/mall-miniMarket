@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <!--顶部-->
+  <view class="head-area">
+    <view>我的店铺</view>
+  </view>
+  <!--主体内容-->
+  <view class="store-area">
+    <view class="store-msg">
+      <view class="store-basic-msg">
+        <image src="{{headImg}}"></image>
+        <text>暂未开店</text>
+      </view>
+      <button class="share-store" hover-class="btn-hover" bindtap="toDetailPage">
+        <image src="https://img.hzanchu.com/acimg/c6a5e768c2ab5067da06e0401dc38674.png"></image>
+      </button>
+    </view>
+    <view class="store-data">
+      <view wx:for="{{dataList}}" wx:key="index">
+        <text>{{item.data}}</text>
+        <text class="data-name">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="store-entrance">
+    <view class="item" wx:for="{{entryList}}" wx:key="index" bindtap="toDetailPage">
+      <image src="{{item.img}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <!--底部-->
+  <sell-footer></sell-footer>
+</view>

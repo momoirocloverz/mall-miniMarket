@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "商品分类",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "head-bar": "/components/seller/headBar/index",
+    "nav-bar": "/components/common/navBar/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

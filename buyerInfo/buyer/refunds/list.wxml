@@ -1,0 +1,25 @@
+<!--pages/buyer/refunds/list.wxml-->
+<view class="container">
+  <view class="order-item" wx:for="{{orderList}}" wx:key="index">
+    <view class="head">
+      <text class="date">{{item.created_at}}</text>
+      <text class="state">售后中</text>
+    </view>
+    <view class="order-code">
+      订单编号：<text>{{item.order_sn}}</text>
+    </view>
+    <view class="refund">
+      退款金额：<text>{{item.refund_price}}</text>
+    </view>
+    <view class="operation">
+      <view>去处理</view>
+    </view>
+  </view>
+   <!-- 为空 -->
+    <is-empty 
+      image="https://img.hzanchu.com/acimg/470bd8e1be1e0d946ff1d09ef167d612.png?x-oss-process=image/resize,l_300" 
+      wx:if="{{isEmpty}}" 
+      margin="100rpx auto"></is-empty>
+    <!-- 到底 -->
+    <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+</view>

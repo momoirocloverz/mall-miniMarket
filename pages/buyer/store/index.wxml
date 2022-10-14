@@ -1,0 +1,17 @@
+<view class="container">
+  <view>
+    <view wx:for="{{list}}" wx:key="index">
+      <store-card
+        isShowMore="{{false}}"
+        store-info="{{item}}"
+        key="{{index}}"
+        collection-hide="{{collectionHides[index]}}"
+        bindtriggerCollectionHide="triggerHide"
+        bindreload="getList"
+      ></store-card>
+    </view>
+  </view>
+  <!-- 到底 -->
+  <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+  <is-empty wx:if="{{isEmpty}}" image="https://img.hzanchu.com/acimg/dca47aa1755cfd823bcf1f89bfc75c72.png" text="暂无浏览店铺" margin="286rpx 0 0 0"></is-empty>
+</view>

@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="content">
+    <view class="state">售后中</view>
+    <view class="item">
+      <text class="label">退货类型：</text>
+      <text class="value">仅退款</text>
+    </view>
+    <view class="item flex">
+      <text class="label">退款金额：</text>
+      <input placeholder="请输入退款金额" placeholder-class="placeholder-color"></input>
+    </view>
+    <view class="item">
+      <text class="label">问题描述：</text>
+      <view class="describe">
+        买的黄瓜坏了，不新鲜了，非常不开心买的黄瓜坏了，不 新鲜了，非常不开心
+      </view>
+    </view>
+    <view class="item">
+      <text class="label">上传凭证：</text>
+      <view class="voucher">
+        <image src=""></image>
+        <image src=""></image>
+        <image src=""></image>
+      </view>
+    </view>
+    <view class="item">
+      <text class="label">订单编号：</text>
+      <text class="value">NB2020391256351225</text>
+    </view>
+    <view class="item">
+      <text class="label">下单时间：</text>
+      <text class="value">2020-7-20 12:32:56</text>
+    </view>
+    <view class="item">
+      <text class="label">申请退款时间：</text>
+      <text class="value">2020-7-21 12:32:56</text>
+    </view>
+    <view class="item">
+      <text class="label">退款编号：</text>
+      <text class="value">TK2020721123256</text>
+    </view>
+    <view class="item">
+      <text class="label">售后申明：</text>
+      <view class="declare">
+        <view>1.这里产品没有确定文案，待定</view>
+        <view>2.这里产品没有确定文案，待定</view>
+        <view>3.这里产品没有确定文案，待定</view>
+      </view>
+    </view>
+  </view>
+  <!--操作按钮-->
+  <view class="operation">
+    <view>拒绝</view>
+    <view>通过</view>
+  </view>
+</view>

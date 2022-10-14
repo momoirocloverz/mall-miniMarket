@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="content">
+    <input maxlength="20" value="鲜到家果园" value="{{value}}" bindinput="changeName"></input>
+  </view>
+  <view class="limit">
+    还能输入 <text>{{limit}} </text> 个字
+  </view>
+  <view class="save" catchtap="submit">保存</view>
+</view>

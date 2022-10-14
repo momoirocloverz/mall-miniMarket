@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我收藏的店铺",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "store-card": "/components/common/storeCard/index",
+    "is-end": "/components/common/isEnd/index",
+    "is-empty": "/components/common/isEmpty/index"
+  }
+}

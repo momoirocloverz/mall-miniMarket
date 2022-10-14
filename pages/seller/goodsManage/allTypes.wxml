@@ -1,0 +1,67 @@
+ <!-- 导航 -->
+ <nav-bar navHeight="{{menubutton.height}}" navTop="{{menubutton.top}}" opacity="{{opacity}}" backIcon="{{backIcon}}" homeIcon="{{homeIcon}}">
+  <view class="head-btn">
+    <view bindtap="toAllGoods" class="{{toggle === 'all' ? 'checked' : ''}}">全部商品</view>
+    <view bindtap="toGoodsType" class="{{toggle === 'edit' ? 'checked' : ''}}">商品分类</view>
+  </view>
+</nav-bar>
+
+<view class="goods-type" style="padding-top: {{headTop}}px">
+  <!--顶部按钮-->
+   
+  <view class="type-list">
+    <view class="type-item" wx:for="{{typeList}}" wx:key="index" data-id="{{item.id}}" data-name="{{item.name}}" catchtap="toGoodsList">
+      <text class="name">{{item.name}}</text>
+      <view class="item-content" wx:if="{{!isEdit}}">
+        <text class="number">{{item.number}}</text>
+        <van-icon name="arrow" color="#999" /> 
+      </view>
+      <view class="item-opration" wx:if="{{isEdit}}">
+        <text bindtap="showDialog" data-id="{{item.id}}" data-name="{{item.name}}">编辑</text>
+        <text bindtap="showDeleteDialog" data-name="{{item.name}}" data-id="{{item.id}}">删除</text>
+      </view>
+    </view>
+  </view>
+  <!--底部-->
+  <view class="footer">
+    <view class="no-edit" wx:if="{{!isEdit}}">
+      <view class="manage" bindtap="changeEdit" data-edit="noEdit">管理分类</view>
+      <view class="add" bindtap="showDialog">
+        <van-icon name="add-o" size="38rpx" custom-class="add-icon" /> 添加分类
+      </view>
+    </view>
+    <view class="is-edit" wx:if="{{isEdit}}" bindtap="changeEdit" data-edit="doEdit">返回</view>
+  </view>
+  <!--新增分类-->
+  <van-dialog
+    use-slot
+    title="{{isEdit ? '请编辑分类名称' : '请输入分类名称'}}"
+    show="{{isShowDialog}}"
+    show-cancel-button
+    bind:close="closeDialog"
+    bind:confirm="addType"
+  >
+    <input
+      value="{{typeValue}}"
+      placeholder="请填写"
+      placeholder-class="placeholder-color"
+      class="dialog-content"
+      bindinput="getTypeValue"
+      maxlength="10"
+    ></input>
+  </van-dialog>
+  <!--删除二次确认-->
+  <van-dialog
+    use-slot
+    show="{{ isShowDeleteDialog }}"
+    show-cancel-button
+    bind:close="closeDeleteDialog"
+    bind:confirm="deletType"
+  >
+    <view class="delete-title">
+      确认删除
+      <text>{{deleteName}}</text>
+      分类名称？
+    </view>
+  </van-dialog>
+</view>

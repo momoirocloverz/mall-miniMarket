@@ -1,0 +1,63 @@
+<!--pages/buyer/refunds/create.wxml-->
+<view>
+  <van-field
+    value="仅退款"
+    label="退货类型："
+    border="{{ false }}"
+    title-width="150rpx"
+  />
+  <van-field
+    value="{{ refund_price }}"
+    placeholder="请输入价格"
+    label="退款金额："
+    border="{{ false }}"
+    title-width="150rpx"
+    bind:change="getPrice"
+  />
+  <van-field
+    placeholder="(必填)不超过80个字"
+    label="问题描述："
+    border="{{ false }}"
+    title-width="150rpx"
+    readonly="{{ true }}"
+  />
+  <view class="reason-wrap">
+    <textarea
+      placeholder="请详细描述问题，我们将继续努力改进。"
+      maxlength="80"
+      class="reason-content"
+      value="{{reason}}"
+      bindinput="getReason"
+      placeholder-class="textarea-wrap"
+    ></textarea>
+  </view>
+ <van-field
+    placeholder="(必填）最多3张图，单张不能超过5M"
+    label="上传凭证"
+    border="{{ false }}"
+    title-width="150rpx"
+    readonly="{{ true }}"
+  />
+  <view class="upload-img">
+    <van-uploader 
+      file-list="{{ fileList }}" 
+      bind:after-read="afterRead" 
+      max-count="3"
+      deletable
+      bind:delete="deletImg"
+    />
+  </view>
+  <view>
+    <van-field
+      label="售后申明"
+      border="{{ false }}"
+      title-width="150rpx"
+      readonly="{{ true }}"
+    />
+  </view>
+  <view class="submit-btn" bindtap="submit">
+    提交售后
+  </view>
+  <van-dialog id="van-dialog" />
+
+</view>

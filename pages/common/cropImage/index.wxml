@@ -1,0 +1,21 @@
+<!--pages/common/cropImage/index.wxml-->
+<view 
+  class="control-wrap"
+>
+  <view bindtap="cancelCropper">取消</view>
+  <view bindtap="choose">重新选择</view>
+  <view catchtap="submit" class="cropper-submit">确定</view>     
+</view>
+    
+  <image-cropper 
+    id="image-cropper" 
+    limit_move="true" 
+    disable_rotate="true" 
+    width="{{width}}" 
+    height="{{height}}" 
+    imgSrc="{{src}}" 
+    bindload="cropperload" 
+    bindimageload="loadimage" 
+    bindtapcut="clickcut"
+  >
+  </image-cropper>

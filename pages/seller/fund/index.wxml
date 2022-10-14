@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="content">
+    <view class="fund_box">
+      <view class="left">
+        <text>可提现金额</text>
+        <text>￥{{totalAccount}}</text>
+      </view>
+      <view class="right">
+        <view class="withdrawal" bindtap="onShowDialog">立刻提现</view>
+      </view>
+    </view>
+    <view class="item-data">
+      <text>提现待入账金额：</text>
+      <text>￥{{waitAccount}}</text>
+    </view>
+    <view class="item-data detail" bindtap="toRecord">
+      <text>提现记录</text>
+      <van-icon name="arrow" color="#999999" />
+    </view>
+    <!-- <view class="item-data detail" bindtap="toDetail">
+      <text>对账单详情</text>
+      <van-icon name="arrow" color="#999999" />
+    </view> -->
+    <view class="line"></view>
+    <view class="record">
+      <text>收款账户</text>
+      <view>{{nickname}}</view>
+    </view>
+  </view>
+  <view class="remark">
+    <view>注：</view>  
+    <view>1、提现金额到账至微信钱包内；</view>
+    <view>2、每日可提现金额必须大于1元，但不能超过5000元，且仅可提现一次。请尽量当天提现金额接近限额一次性提取；</view>
+    <view>3、到账时间最长不超过24小时，具体时间以微信为准。</view>
+  </view>
+</view>

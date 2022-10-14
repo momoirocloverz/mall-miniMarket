@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的店铺",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "sell-footer": "/components/seller/sellFooter/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "nav-bar": "/components/common/navBar/index"
+  }
+}

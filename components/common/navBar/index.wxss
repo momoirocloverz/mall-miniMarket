@@ -1,0 +1,93 @@
+/* components/common/navBar/index.wxss */
+.head-box {
+  width: 100%;
+  height: 80rpx;
+  padding-top: 44rpx;
+  padding-bottom: 1.5vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.head-back {
+  position: absolute;
+  left: 33rpx;
+  bottom: 2.8vh;
+  z-index: 10;
+  width: 20rpx;
+  height: 36rpx;
+}
+.head-back image {
+  width: 20rpx;
+  height: 36rpx;
+}
+.head-btn {
+  width: 320rpx;
+  display: flex;
+  border-radius: 10rpx;
+  border: 1rpx solid #ffd339;
+  overflow: hidden;
+}
+.head-btn navigator  {
+  flex: 1;
+}
+.head-btn view {
+  width: 100%;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+.head-btn .checked {
+  background: #FFD339;
+}
+/* 自定义导航 */
+.nav-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: #fff;
+}
+.nav-warp{ 
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.nav-left {
+  position: absolute;
+  z-index: 10;
+  min-width: 50rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 10rpx;
+}
+.nav-left .back-icon {
+  width: 20rpx;
+  height: 36rpx;
+}
+.nav-left .home-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+}
+.nav-title{
+  width: 100%;
+  text-align: center;
+  color: #333333;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.nav-sticky{
+  width: 100%;
+}

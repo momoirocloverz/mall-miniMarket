@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "订单列表",
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "is-end": "/components/common/isEnd/index",
+    "is-empty": "/components/common/isEmpty/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "order-operate": "/components/buyer/orderOperate/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "nav-bar": "/components/common/navBar/index"
+  }
+}

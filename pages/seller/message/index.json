@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "消息",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "is-end": "/components/common/isEnd/index",
+    "is-empty": "/components/common/isEmpty/index",
+    "sell-footer": "/components/seller/sellFooter/index"
+  }
+}

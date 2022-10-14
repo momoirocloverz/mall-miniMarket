@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="add-image">
+    <text>修改店铺头像</text>
+    <van-uploader
+      file-list="{{headList}}"
+      bind:after-read="afterRead"
+      deletable
+      preview-size="220rpx"
+      bind:delete="deletImg"
+      max-count="1"
+    >
+      <view class="add-area">
+        <text class="add-icon">+</text>
+        <text>添加头像</text>
+      </view>
+    </van-uploader>
+  </view>
+  <view class="save" catchtap="submit">保存</view>
+</view>

@@ -1,0 +1,26 @@
+<!--components/common/navBar/index.wxml-->
+<view 
+  class="nav-content"
+  style="height:{{navHeight + 'px'}};padding-top:{{navTop + 'px'}};line-height:{{navHeight + 'px'}};padding-bottom:20rpx;background:rgba(255,255,255,{{opacity}});"
+>
+  <view class="nav-warp">
+    <view class="nav-left">
+      <!-- <van-icon name="arrow-left"/> -->
+      <image 
+        class="home-icon" 
+        wx:if="{{canGoHome === 1}}" 
+        src="{{homeIcon}}"
+        bindtap="goHome"
+      ></image>
+      <image 
+        class="back-icon" 
+        wx:if="{{canGoHome === 2}}" 
+        src="{{backIcon}}"
+        bindtap="goBack"
+      ></image>
+    </view>
+    <view class="nav-title">
+      <slot></slot>
+    </view>
+  </view>
+</view>

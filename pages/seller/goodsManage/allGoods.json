@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "全部商品",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "head-bar": "/components/seller/headBar/index",
+    "nav-bar": "/components/common/navBar/index",
+    "is-end": "/components/common/isEnd/index",
+    "is-empty": "/components/common/isEmpty/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

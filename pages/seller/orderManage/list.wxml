@@ -1,0 +1,91 @@
+<!--pages/buyer/order/list.wxml-->
+<view class="container">
+  <!-- 分类标签页 -->
+  <view class="list-tops">
+    <view class="order-nav">
+      <view 
+        class="order-nav-item" 
+        wx:for="{{cateList}}" 
+        wx:key="index" 
+        style="color:{{item.value==status?'#3C3C3C':'#3C3C3C'}}" 
+        bindtap="clickNav" data-item="{{item}}">
+        {{item.name}}
+        <view wx:if="{{item.value==status}}"></view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品列表 -->
+  <view 
+    class="order-item"
+    wx:for="{{orderList}}"
+    wx:key="orderIndex"
+    wx:for-item="orderItem"
+  >
+    <!-- <van-cell 
+      title="{{orderItem.created_at}}" 
+      value="{{orderType[orderItem.status].name}}" 
+      value-class="{{orderItem.status !== 3 ? 'value-item' : 'title-active'}}"
+      title-class="title-item"
+      border="{{false}}"
+      custom-class="radius-top-16"
+    /> -->
+    <view class="order-top">
+      <view class="order-top-time">{{orderItem.created_at}}</view>
+      <view class="order-top-status">{{orderType[orderItem.status].name}}</view>
+    </view>
+    <van-card
+      wx:for="{{orderItem.goods_info}}"
+      wx:key="goodsIndex"
+      wx:for-item="goodsItem"
+      data-item="{{orderItem}}"
+      custom-class="goods-card"
+      title-class="goods-title"
+      num="{{goodsItem.goods_num}}"
+      price="{{goodsItem.goods_price}}"
+      title="{{goodsItem.goods_name}}"
+      desc="{{goodsItem.unit?'规格：'+goodsItem.unit:''}}"
+      thumb="{{ goodsItem.goods_image  }}"
+      bindtap="toDetail"
+    />
+    <!-- 价格栏 -->
+    <view class="price-column radius-bottom-16">
+      <view class="goods-num">共{{orderItem.goods_count}}件商品，</view>
+      <view class="goods-price-label">合计</view>
+      <view class="goods-price">￥{{orderItem.total_price}}</view>
+      <view class="goods-express">(含运费￥{{orderItem.freight}})</view>
+    </view>
+    <!-- 状态按钮栏 -->
+    <view class="button-wrap radius-bottom-16">
+      <view class="cancle" data-price="{{orderItem.total_price}}" data-id="{{orderItem.order_sn}}" wx:if="{{orderItem.status === 0}}"  bindtap="modify">调整价格</view>
+      <view class="cancle" data-id="{{orderItem.order_sn}}" wx:if="{{orderItem.status === 3}}"  bindtap="calcle">取消订单</view>
+      <view class="send" data-id="{{orderItem.order_sn}}" wx:if="{{orderItem.status === 3}}"  bindtap="toShip">去发货</view>
+      <view class="agree" wx:if="{{orderItem.status === 5}}" data-item="{{orderItem}}" bindtap="agree">同意</view>
+      <view class="refuse" wx:if="{{orderItem.status === 5}}" data-item="{{orderItem}}" bindtap="refuse">拒绝</view>
+    </view>
+  </view>
+  <!-- 到底 -->
+  <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+  <is-empty wx:if="{{isEmpty}}" image="https://img.hzanchu.com/acimg/abaa2ab58b011e29e3b9b0d70ddda5bb.png" text="您还没有相关的订单哦~" margin="286rpx 0 0 0"></is-empty>
+</view>
+
+<view class="dialog" wx:if="{{showDialog}}">
+  <view class="content">
+    <view class="title">{{dialogType ==='refuse'?'拒绝原因':'取消订单原因'}}</view>
+    <input value="{{reason}}" placeholder="{{dialogType ==='refuse'?'请填写拒绝原因':'请填写取消订单原因'}}" bindinput="inReason"></input>
+    <view class="handle">
+      <view bindtap="quxiao">取消</view>
+      <view bindtap="queding">确定</view>
+    </view>
+  </view>
+</view>
+
+<view class="dialog" wx:if="{{showModifyDialog}}">
+  <view class="content">
+    <view class="title">请修改价格</view>
+    <input value="{{modifyPrice}}" placeholder="请输入价格" bindinput="modifyPrice"></input>
+    <view class="handle">
+      <view bindtap="quxiaoModify">取消</view>
+      <view bindtap="quedingModify">确定</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/buyer/pay/success.wxml-->
+<image
+  class="pay-icon"
+  src="../../../lib/image/buyer/order/success.png"
+>
+</image>
+<view class="pay-text">支付成功</view>
+<view class="pay-btn">
+  <van-button 
+    color="#F96A31" 
+    plain
+    size="small"
+    bindtap="toIndex"
+  >返回店铺首页</van-button>
+  <van-button 
+    color="#333333" 
+    plain
+    size="small"
+    custom-class="to-order"
+    bindtap="toOrderDetail"
+  >查看订单</van-button>
+</view>

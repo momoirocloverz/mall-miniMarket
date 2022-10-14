@@ -1,0 +1,52 @@
+/* components/buyer/orderOperate/index.wxss */
+.button-list {
+  display: flex;
+  flex-direction: row;
+  padding: 5rpx 0;
+}
+.button-list button{
+  background: #ffffff;
+}
+.support-right {
+  margin-right:auto;
+}
+.button-item {
+  margin-left:20rpx;
+  display: flex;
+}
+.button-item view,.button-item button{
+  width:176rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius:36rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  padding: 0;
+}
+.button-item view,.button-item button::after{
+  border: none!important;
+}
+.button-item .cancal-order {
+  border:1rpx solid #666666;
+  color:#666666;
+}
+.confirm{
+  color: #F76925;
+  border: 1rpx solid #F76925;
+  margin-left: 20rpx
+}
+.normal{
+  color: #999999;
+  border: 1rpx solid #999999;
+  margin-left: 20rpx
+}
+.cancle {
+  color: #F76925;
+  border: 1rpx solid #F76925;
+  margin-left: 20rpx
+}
+.hover-btn{
+  background: #ffffff;
+}

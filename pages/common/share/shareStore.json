@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分享商店",
+  "usingComponents":{
+    "painter":"/components/painter/painter"
+  }
+}

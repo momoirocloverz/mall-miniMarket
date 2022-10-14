@@ -1,0 +1,50 @@
+<!-- 轮播图 -->
+<w-swiper 
+  list="{{goodsInfo.banner.image}}" 
+  goodsId="{{options.goods_id}}" 
+  height="480rpx"
+></w-swiper>
+<!-- 商品基础信息 -->
+<view>
+  <view class="goods-top">
+    <view class="goods-price">￥{{goodsInfo.price}}</view>
+    <view class="original-price" wx:if="{{goodsInfo.original_price != '0.00'}}">￥{{goodsInfo.original_price}}</view>
+    <view class="goods-num">剩余{{goodsInfo.num}}件</view>
+  </view>
+  <view class="goods-middle">
+    <view class="good-title">{{goodsInfo.title}}</view>
+    <button class="goods-share" bindtap="toShare">
+      <view>
+        <image src="https://img.phbjx.com/test/81d33dd2728fcf21e153e84451a95bb3.png"></image>
+        <text>分享</text>
+      </view>
+    </button>
+  </view>
+</view>
+<!-- 运费&规格 -->
+<view class="express-wrap">
+  <view class="express-row">
+    <view class="express-label">运费</view>
+    <view class="express-value border-bottom">
+      {{goodsInfo.express ? goodsInfo.express + '元' : '免运费'}}
+      <text wx:if="{{goodsInfo.freight_comment}}">（{{goodsInfo.freight_comment}}）</text>
+    </view>
+  </view>
+  <view class="express-row">
+    <view class="express-label">规格</view>
+    <view class="express-value">{{goodsInfo.unit}}</view>
+  </view>
+</view>
+<!-- 详情 -->
+<view class="goods-info">
+  <view class="goods-label">商品详情</view>
+  <view class="goods-img-box">
+    <image
+      wx:for="{{goodsInfo.images}}"
+      wx:key="goodsIndex"
+      wx:for-item="goodsItem"
+      src="{{goodsItem}}"
+      mode="widthFix"
+    ></image>
+  </view>
+</view>

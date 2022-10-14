@@ -1,0 +1,31 @@
+<!--pages/buyer/address/list.wxml-->
+<view class='address-info'>
+  <view class='address' wx:if="{{isEmpty}}">
+    <view  class="empty-address">
+      <image lazy-load="true" src="https://img.hzanchu.com/acimg/f0d4a882294085045c331504cb53463e.png"></image>
+      <view class="add-text">还没有收货地址哦，快去添加吧~</view>
+      <view class="add-btn" bindtap='toAdd'>添加收货地址</view>
+    </view>
+  </view>
+  <view class='content' wx:if="{{!isEmpty}}" style="margin: {{page_type == 'mine' ? '0 0 170rpx 0' : '0 0 170rpx'}}">
+    <view class="address-list clearfix" wx:for="{{addressList}}" wx:key="index">
+      <view class="user-info" bindtap="toFromPage" data-item="{{item}}">
+        <view class="user-info-top">
+          <text class="user-name">{{item.consignee}}</text>
+          <text class="user-phone">{{item.mobile}}</text>
+          <text wx:if="{{item.is_default == 1}}" class="default-text">默认</text>
+        </view>
+        <view class="user-info-bottom">
+          <view>{{item.province_text+item.city_text+item.district_text+item.street_text+item.address}}</view>
+        </view>
+      </view>
+      <view class='adddress-edit' bindtap='toEdit' data-item='{{item}}'>
+        编辑
+      </view>
+    </view>
+  </view>
+  <view class='delete-btn' wx:if="{{!isEmpty}}">
+    <button  bindtap='toAdd'>添加收货地址</button>
+  </view>
+</view>
+

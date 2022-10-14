@@ -1,0 +1,8 @@
+.is-end {
+  text-align: center;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  color: #999;
+  height: 110rpx;
+  line-height: 110rpx;
+}

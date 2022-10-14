@@ -1,0 +1,3 @@
+<!--pages/buyer/policy/service.wxml-->
+<rich-text space nodes="{{htmlSnip}}"></rich-text>
+

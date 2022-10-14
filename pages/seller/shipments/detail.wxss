@@ -1,0 +1,243 @@
+.container{
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: #F5F7FA;
+}
+.order-top{
+  height: 340rpx;
+}
+.order-status{
+  background: linear-gradient(#fec80a 0%, #ffd339 100%);
+  height: 220rpx;
+  padding: 40rpx 30rpx 0 30rpx;
+}
+.status-cell{
+  font-size: 36rpx!important;
+  color: #000 !important;
+  background: rgba(0, 0, 0, 0)!important;
+}
+.custom-icon{
+  font-size:  58rpx;
+}
+.custom-icon image{
+  width: 65rpx!important;
+  height: 65rpx!important;
+}
+.goods-card { 
+  background-color: #ffffff!important;
+}
+.goods-title {
+  font-weight: 500!important;
+  font-size: 26rpx!important;
+}
+.label-text{
+  color: #ffffff!important;
+}
+.order-address {
+  width: 630rpx;
+  min-height: 130rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  padding: 30rpx;
+  position: relative;
+  top: -100rpx;
+  box-shadow: 2rpx 1rpx 9rpx 7rpx rgba(0,4,3,0.06);
+}
+.person-info {
+  display: flex;
+  align-items: center;
+}
+.person-info view:nth-of-type(1) {
+  color: #222;
+  font-weight: 600;
+  font-size: 30rpx;
+}
+.person-info text {
+  color: #999;
+  font-weight: 400;
+  margin-left: 18rpx;
+  font-size: 28rpx;
+}
+.person-info view:nth-of-type(2) {
+  font-size: 22rpx;
+  color: #FFD339;
+  padding: 6rpx 10rpx;
+  border: 1px solid #FFD339;
+  margin-left: auto;
+  border-radius: 10rpx;
+}
+.address-info {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #222222;
+  margin-top: 18rpx;
+}
+.order-item {
+  padding: 20rpx 30rpx;
+  margin: 20rpx 0 10rpx 0;
+  border-radius: 20rpx;
+}
+/* 价格栏 */
+.price-column {
+  display: flex;
+  font-size: 28rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #ffffff;
+  padding: 30rpx;
+  box-shadow: 2rpx 1rpx 9rpx 7rpx rgba(0,4,3,0.06);
+}
+.goods-num {
+  font-weight: 400;
+  color: #999999;
+}
+.goods-price-label {
+  font-weight: 500;
+  color: #333333;
+}
+.goods-price {
+  font-weight: 700;
+  color: #F11D09;
+}
+.goods-express{
+  font-weight: 400;
+}
+.pay-info{
+  font-size:26rpx;
+  padding:26rpx;
+  margin: 0 30rpx 200rpx;
+  background:#fff;
+  color:#3c3c3c;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 1rpx 9rpx 7rpx rgba(0,4,3,0.06);
+}
+.pay-info-order{
+  background:#fff;
+}
+.pay-info-item{
+  display: flex;
+  padding: 10rpx 0;
+  align-items: center;
+}
+.pay-info-item-content{
+  color:#656565;
+  margin: 0 30rpx 0 16rpx;
+  flex: 1;
+}
+.pay-info-button{
+  height:40rpx;
+  line-height:40rpx;
+  padding:0 23rpx;
+  border:1px solid rgba(151,151,151,1);
+  border-radius:50rpx;
+}
+.flex-text{
+  align-items: flex-start;
+}
+.order-bottom{
+  box-shadow:0px 1px 1px 1px rgba(217,217,217,0.6);
+  position: fixed;
+  background:#fff;
+  left:0;
+  bottom:0;
+  width:100%;
+  box-sizing:border-box;
+  display: flex;
+  padding: 0 26rpx;
+  justify-content: flex-end;
+  align-items: center;
+}
+.order-bottom icon{
+  font-size:42rpx;
+  color:#3C3C3C;
+}
+.order-bottom button{
+  padding:0 30rpx 0 0;
+  margin-right:auto;
+}
+.pay-title{
+  display: flex;
+  align-items: center;
+  color: #222222;
+  margin-bottom: 10rpx;
+  font-weight: 500;
+}
+.pay-title image {
+  width: 25rpx;
+  height: 31rpx;
+  margin-right: 10rpx;
+}
+.line{
+  width: 6rpx;
+  height: 29rpx;
+  background: #ffd339;
+  border-radius: 3rpx;
+  margin-right: 10rpx;
+}
+.ship-way {
+  box-shadow: 2rpx 1rpx 9rpx 7rpx rgba(0,4,3,0.06);
+  font-size: 26rpx;
+  padding: 26rpx;
+  margin: 0 30rpx 30rpx;
+  background: #fff;
+  color: #3c3c3c;
+  border-radius: 10rpx;
+}
+.ship-way .ship-title {
+  display: flex;
+  align-items: center;
+  color: #222222;
+  margin-bottom: 30rpx;
+  font-weight: 500;
+}
+.express-detail-item {
+  display: flex;
+  padding: 10rpx 0;
+  align-items: center;
+}
+.van-radio {
+  margin-bottom: 20rpx;
+}
+.van-radio__icon--checked {
+  background: #FFD339 !important;
+}
+.van-radio__icon {
+  border: 1rpx solid #FFD339 !important;
+}
+.express-name, .express-code {
+  flex: 1;
+  padding: 0 15rpx;
+  height: 62rpx;
+  background: #ffffff;
+  border: 1rpx solid #dcdcdc;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #656565;
+}
+.go-ship {
+  width: 100%;
+  height: 98rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 90;
+}
+.go-ship .van-button {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 98rpx;
+  background: #FFD339;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333; 
+}
+.sheet-index--van-action-sheet {
+  height: 50% !important;
+}

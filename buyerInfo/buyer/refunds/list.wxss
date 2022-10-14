@@ -1,0 +1,55 @@
+/* pages/buyer/refunds/list.wxss */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+  padding: 20rpx 28rpx 0 32rpx;
+  box-sizing: border-box;
+}
+.order-item {
+  padding: 28rpx 24rpx 37rpx 29rpx;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: -1rpx 2rpx 8rpx 0 rgba(12,1,0,0.13); 
+  border-radius: 10rpx;
+}
+.order-item .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+.order-item .date {
+  font-size: 28rpx;
+  color: #666;
+}
+.order-item .state {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #F76925;
+}
+.order-code {
+  font-size: 30rpx;
+  color: #222;
+  margin-bottom: 22rpx;
+}
+.refund {
+  font-size: 30rpx;
+  color: #222;
+  margin-bottom: 22rpx;
+}
+.operation {
+  display: flex;
+  justify-content: flex-end;
+}
+.operation view {
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 58rpx;
+  border-radius: 60rpx;
+  border: 1rpx solid #F76925;
+  box-sizing: border-box;
+  color: #F76925;
+  font-size: 30rpx;
+}

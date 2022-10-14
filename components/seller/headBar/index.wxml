@@ -1,0 +1,16 @@
+<view class="head-box" style="padding-top: {{headTop}}px">
+  <van-nav-bar
+    left-arrow
+    fixed="{{true}}"
+    bind:click-left="onClickLeft"
+  >
+    <view class="head-btn" slot="title">
+      <!-- <navigator url="/pages/seller/goodsManage/allGoods"> -->
+        <view bindtap="toAllGoods" class="{{toggle === 'all' ? 'checked' : ''}}">全部商品</view>
+      <!-- </navigator>
+      <navigator url="/pages/seller/goodsManage/allTypes"> -->
+        <view bindtap="toGoodsType" class="{{toggle === 'edit' ? 'checked' : ''}}">商品分类</view>
+      <!-- </navigator> -->
+    </view>
+  </van-nav-bar>
+</view>

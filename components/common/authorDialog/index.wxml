@@ -1,0 +1,15 @@
+<view class="author-dialog" catchtouchmove="true" wx:if="{{show}}">
+  <view class="content">
+    <view class="title">{{title}}</view>
+    <view class="explain">{{content}}</view>
+    <view class="button">
+      <view bindtap="cancel">{{cancelBtnText}}</view>
+      
+      <view>
+        <button open-type='getUserInfo' bindgetuserinfo='getUserInfo'>
+        {{confirmBtnText}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

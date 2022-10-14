@@ -1,0 +1,34 @@
+<!--pages/seller/fund/confirm.wxml-->
+<view class="outer">
+  <image mode="widthFix" src="https://img.hzanchu.com/acimg/6c7626e8c592c21f030927e2bd1d21ac.png"></image>
+  <view class="amount">
+    <view class="title">提现金额</view>
+    <view class="input">
+      <text>￥</text>
+      <input 
+        type="digit" 
+        value="{{ amountValue }}"
+        bindinput="inputValue"
+      />
+    </view>
+    <view class="take-all">
+      当前钱包余额{{ totalAccount }}元，<text bindtap="takeAll">全部提现</text>
+    </view>
+  </view>
+  <button class="confirm" disabled="{{ disabled }}" type="primary" bindtap="confirm">确认提现</button>
+
+  <!--提现弹窗-->
+  <van-dialog
+    title=""
+    use-slot
+    show="{{ showDialog }}"
+    show-cancel-button
+    bind:close="closeDialog"
+    bind:confirm="withdrawal"
+  >
+    <view class="dialog-cont">
+      <view>确认提现<text>{{amountValue}}元</text></view>
+      <view>到微信钱包吗？</view>
+    </view>
+  </van-dialog>
+</view>

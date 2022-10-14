@@ -1,0 +1,31 @@
+/* pages/buyer/refunds/create.wxss */
+.reason-wrap{
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  margin: 0 30rpx;
+  height: 185rpx;
+}
+.textarea-wrap{
+  font-size: 26rpx;
+  color: #CCCCCC;
+}
+.reason-content{
+  width: 660rpx;
+  height: 155rpx;
+  padding: 15rpx;
+}
+.upload-img{
+  padding: 0 30rpx;
+}
+.submit-btn{
+  width: 550rpx;
+  height: 88rpx;
+  background: #FFD339;
+  border-radius: 50rpx;
+  margin: 0 auto;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}

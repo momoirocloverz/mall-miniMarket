@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="type-area">
+    <van-checkbox-group value="{{ result }}" bind:change="onChange">
+      <van-checkbox
+        wx:for="{{typeList}}"
+        wx:key="index"
+        custom-class="type-item"
+        label-class="msg-item"
+        shape="square"
+        name="{{item.id}}"
+      >{{item.category_name}}</van-checkbox>
+    </van-checkbox-group>
+  </view>
+  <view class="bottom">
+    <view class="add" bindtap="showDialog">
+      <image src="https://img.hzanchu.com/acimg/08cdfb21d757afbfcb43e3bb0ffd3702.png?x-oss-process=image/resize,l_300"></image>
+      <text>添加分类</text>
+    </view>
+    <view class="save" catchtap="save">
+      <text>保存</text>
+    </view>
+  </view>
+  <!--新增分类-->
+  <van-dialog
+    use-slot
+    title="请输入分类名称"
+    show="{{isShowDialog}}"
+    show-cancel-button
+    bind:close="closeDialog"
+    bind:confirm="confirm"
+  >
+    <input
+      placeholder="请填写"
+      value="{{cateName}}"
+      placeholder-class="placeholder-color"
+      class="dialog-content"
+      bindinput="getTypeName"
+      maxlength="10"
+    ></input>
+  </van-dialog>
+</view>

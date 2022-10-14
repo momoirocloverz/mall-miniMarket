@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.content {
+  width: 100%;
+  height: 270rpx;
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+.content textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: #333333;
+  line-height: 50rpx;
+}
+.limit {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 30rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #999999;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+.limit text {
+  color: #F76925;
+}
+.save {
+  width: 550rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 50rpx;
+  background: #FFD339;
+  color: #333;
+  font-size: 32rpx;
+  margin: 0 auto;
+}

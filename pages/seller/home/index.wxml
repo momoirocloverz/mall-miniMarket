@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 顶部banner图 -->
+  <!-- <image
+    class="banner-image" 
+    src="{{bannerImage}}" 
+  /> -->
+  <nav-bar navHeight="{{menubutton.height}}" navTop="{{menubutton.top}}" opacity="{{opacity}}" backIcon="{{backIcon}}" homeIcon="{{homeIcon}}">
+    <!-- <view class="head-btn">店铺预览</view> -->
+  </nav-bar>
+  <view class="navbar" style="background:url({{bannerImage}}) no-repeat;background-size: 100% 100%;"></view>
+  <!-- 分类标签页 -->
+  <van-tabs
+    line-width="36"
+    color="#FA720F"
+    border="{{false}}"
+    bind:click="selectCate"
+    class="myself-top"
+    wx:if="{{cateList.length > 0}}"
+  >
+    <van-tab
+      title="{{item.category_name}}" 
+      wx:for="{{cateList}}"
+      wx:key="index"
+    >
+      <!-- 商品列表 -->
+      <view class="goods-box">
+        <goods-card 
+          wx:for="{{goodsList}}" 
+          wx:key="index"
+          goods="{{item}}"
+          storeId="{{store_id}}"
+        ></goods-card>
+      </view>
+      <!-- 为空 -->
+      <is-empty 
+        image="https://img.hzanchu.com/acimg/b003e3739defef0fb3a269a7f0bf63b8.png" 
+        wx:if="{{isEmpty}}" 
+        text="暂未上架商品"
+        margin="100rpx auto"
+      ></is-empty>
+      <!-- 到底 -->
+      <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+    </van-tab>
+  </van-tabs>
+</view>

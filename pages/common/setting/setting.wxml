@@ -1,0 +1,14 @@
+<!--pages/seller/mine/setting.wxml-->
+<view class='container'>
+  <van-cell 
+    wx:for="{{navList}}"
+    title="{{item.name}}" 
+    is-link 
+    link-type="navigateTo"
+    url="{{item.path}}"
+  />
+  <view class="version">
+    <text>版本号</text>
+    <text>1.7.2</text>
+  </view> 
+</view>

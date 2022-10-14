@@ -1,0 +1,70 @@
+<!-- 拖拽排序暂时注释 -->
+<page-meta scroll-top="{{pageMetaScrollTop}}"></page-meta>
+<view class="tip">
+	<text style="color: red;">长按触发拖拽排序,拖动到底部删除。</text>
+	<!-- <text style="color: #3F82FD;">最新版本增加顶部固定区域高度和底部固定区域高度, 以响应超过一屏时候可以正确滑动</text> -->
+</view>
+<drag id="drag"
+  bind:click="itemClick"
+  bind:change="change"
+  bind:sortend="sortEnd"
+  bind:scroll="scroll"
+  extra-nodes="{{extraNodes}}"
+  list-data="{{listData}}"
+  columns="{{size}}"
+  scroll-top="{{scrollTop}}"
+  top-size="110"
+  bottom-size="{{isIphoneX ? 280 : 200 }}">
+  <view slot="before" class="extra">
+    第0个元素之前插入该元素, 该元素不参与排序
+  </view>
+  <view slot="after" class="extra">
+    第0个元素之后插入该元素, 该元素不参与排序
+  </view>
+  <view slot="plus" class="plus-wrap" bindtap="add">
+    <view class="plus"></view>
+  </view>
+</drag>
+<view class="empty-bottom {{isIphoneX ? 'isX' : ''}}"></view>
+
+<view class="control-panel {{isIphoneX ? 'isX' : ''}}">
+	<view class="bottom">
+    <view class="save" catchtap="save">
+      <text>调整完成</text>
+    </view>
+  </view>
+</view>
+
+<!--index.wxml-->
+<!-- <view class="container">
+
+  <view class="image-area">
+    <view class="image-item" wx:for="{{fileList}}" wx:key='index' wx:for-index="bindex">
+      <image mode="widthFix" src="{{item.url}}"></image>
+      <image bindtap="deletImg" data-bindex="{{bindex}}" src="https://img.hzanchu.com/acimg/460e16cbb49b16ba245563209c5636a8.png?x-oss-process=image/resize,l_300"></image>
+      <image wx:if="{{fileList.length>1 && bindex > 0}}" bindtap="upImg" data-bindex="{{bindex}}" src="https://img.hzanchu.com/acimg/1ca79c0e96db5377393a7d4b20adf0a1.png?x-oss-process=image/resize,l_300"></image>
+      <image wx:if="{{fileList.length>1 && bindex < fileList.length-1}}" bindtap="downImg" data-bindex="{{bindex}}" src="https://img.hzanchu.com/acimg/cd6976dcfd9c609589ac95779edcc60d.png?x-oss-process=image/resize,l_300"></image>
+    </view>
+  </view>
+  <view class="bottom">
+    <van-uploader
+      class="add"
+      multiple="{{true}}"
+      bind:after-read="afterRead"
+    >
+      <view class="upload">
+        <image src="https://img.hzanchu.com/acimg/08cdfb21d757afbfcb43e3bb0ffd3702.png?x-oss-process=image/resize,l_300"></image>
+        <text>添加图片</text>
+      </view>
+    </van-uploader>
+    <view class="add" bindtap="addImage">
+       <view class="upload">
+        <image src="https://img.hzanchu.com/acimg/08cdfb21d757afbfcb43e3bb0ffd3702.png?x-oss-process=image/resize,l_300"></image>
+        <text>添加图片</text>
+      </view>
+    </view>
+    <view class="save" catchtap="save">
+      <text>添加完成</text>
+    </view>
+  </view>
+</view> -->

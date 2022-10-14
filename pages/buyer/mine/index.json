@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

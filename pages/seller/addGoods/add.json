@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "新增商品",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-picker": "@vant/weapp/picker/index"
+  }
+}

@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="amount">
+    <text>总提现金额：</text>
+    <text>￥{{takeTotalAmount}}</text>
+  </view>
+  <!-- <view class="record-item" wx:for="{{recordList}}" wx:key="index">
+    <view class="left">
+      提现时间：{{item.created_at}}
+    </view>
+    <view class="right">{{item.amount > 0 ? '+' + item.amount : item.amount}}   </view>
+  </view>
+  <is-end wx:if="{{isEnd}}" text="我是有底线的哦"></is-end> -->
+  <view class="list" wx:if="{{recordList.length}}">
+    <view class="item" wx:for="{{recordList}}" wx:key="index">
+      <view class="line-one">
+        <text>提现账号：{{item.account}}</text>
+        <text>{{item.status_name}}</text>
+      </view>
+      <view class="line-two">
+        <text>提现时间：{{item.created_at}}</text>
+        <text>{{item.amount}}</text>
+      </view>
+      <view class="line-three" wx:if="{{item.status === 2 && item.return_message}}">失败原因：{{item.return_message}}</view>
+      <view class="line-four" wx:if="{{item.status === 2}}">注：金额已返回至资金，可重新提现。</view>
+    </view>
+    <is-end wx:if="{{isEnd}}" text="我是有底线的哦"></is-end>
+  </view>
+</view>

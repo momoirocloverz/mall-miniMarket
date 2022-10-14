@@ -1,0 +1,21 @@
+<!--pages/seller/store/shareImage.wxml-->
+<view class="container">
+  <view class="add-image">
+    <text>修改店铺分享图</text>
+    <van-uploader
+      file-list="{{headList}}"
+      bind:after-read="afterRead"
+      deletable
+      preview-size="220rpx"
+      bind:delete="deletImg"
+      imageFit="aspectFill"
+      max-count="1"
+    >
+      <view class="add-area">
+        <text class="add-icon">+</text>
+        <text>添加分享图</text>
+      </view>
+    </van-uploader>
+  </view>
+  <view class="save" catchtap="submit">保存</view>
+</view>

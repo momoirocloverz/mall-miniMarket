@@ -1,0 +1,18 @@
+
+<view class="map_container">
+  <map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' bindcontroltap="bindcontroltap" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap'
+    show-location></map>
+</view>
+
+
+<view class='list-guide'>
+<!-- 这里的坐标本应该是从服务器获取数据的,这时丈先写死在页面上了 -->
+  <view bindtap="onGuideTap" data-latitude='39.92392' data-longitude='116.411885' data-bankName='最高人民检察院'>
+    <!-- <image src='/images/banklist/daohang.png' class='list-guide-imgae'></image> -->
+    <text class='list-guide-text'>导航</text>
+  </view>
+  <view bindtap='onbankTap' data-bankId="{{item.BANK_ID}}">
+    <!-- <image src='/images/banklist/xiangqing.png' class='list-guide-imgae'></image> -->
+    <text class='list-guide-text'>详情</text>
+  </view>
+</view>

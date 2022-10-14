@@ -1,0 +1,95 @@
+.author-common {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.author-page {
+  z-index: 99;
+}
+
+.author-dark {
+  z-index: 111;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.author-content {
+  width: 500rpx;
+  height: 300rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -250rpx;
+  margin-top: -150rpx;
+  z-index: 999;
+  background: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.author-content-title {
+  text-align: center;
+  color: #000;
+  margin-top: 20rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.author-info {
+  font-size: 28rpx;
+  color: #333;
+  padding: 0px 50rpx;
+  font-family: PingFang SC;
+  line-height: 40rpx;
+  text-align: center;
+  margin: 30rpx auto 30rpx;
+}
+
+.author-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 2;
+  border-top: #eee solid 1rpx;
+}
+
+.author-cancel {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  border-right: #eee solid 1rpx;
+  justify-content: center;
+  color: #333;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+}
+
+.author-ok {
+  display: flex;
+  flex: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  color: #007AFF;
+}
+
+.author-ok button {
+  background: transparent;
+  color: #007AFF;
+  font-size: 28rpx;
+  line-height: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0rpx;
+  margin: 0rpx;
+  width: 100%;
+}
+.author-ok button::after{
+  border: none;
+}

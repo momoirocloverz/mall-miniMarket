@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="head">
+    <image src="https://img.hzanchu.com/acimg/4d2b43969a3f80bb7eabb5b88332be98.png"></image>
+  </view>
+  <view class="search">
+    <view>
+      <image class="icon__search" mode="widthFix" src="../../../lib/image/search.png"></image>
+      <input value="{{keyword}}" type="text" bindinput="setSearchValue" placeholder="搜一搜"/>
+      <image wx:if="{{keyword}}" class="icon__clear" mode="widthFix" src="../../../lib/image/close.png" bindtap="clearSearchValue"></image>
+    </view>
+    <text bindtap="search">搜索</text>
+  </view>
+  <view class="store-list">
+    <scroll-view scroll-y="true" style="height:calc(100vh - 318rpx);" refresher-enabled="true" bindrefresherrefresh="onPullDownRefresh" refresher-triggered="{{freshState}}" bindscrolltolower="onReachBottom">
+      <view wx:for="{{list}}" wx:key="index" class="store-card-container">
+        <store-card
+          isShowMore="{{false}}"
+          store-info="{{item}}"
+          key="{{index}}"
+          collection-hide="{{collectionHides[index]}}"
+          bindtriggerCollectionHide="triggerHide"
+          bindreload="getList"
+          from="index"
+        ></store-card>
+      </view>
+      <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+      <is-empty wx:if="{{isEmpty}}" image="https://img.hzanchu.com/acimg/dca47aa1755cfd823bcf1f89bfc75c72.png" text="暂无数据" margin="286rpx 0 0 0"></is-empty>
+    </scroll-view>
+  </view>
+  <view class="operation" bindtap="toEntry">
+    <text>前往</text>
+    <text>店铺</text>
+  </view>
+  <!-- 到底 -->
+</view>

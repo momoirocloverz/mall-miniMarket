@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "身份证正面(国徽)",
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "phbjx",
+  "version": "1.0.0",
+  "description": "phbjx mall",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "umtrack-wx": "^2.2.0",
+    "@vant/weapp": "^1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.anchumall.com:h5/phbjx_wxmini.git"
+  },
+  "author": "renxy zhanghf",
+  "license": "ISC"
+}

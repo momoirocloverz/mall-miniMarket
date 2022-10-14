@@ -1,0 +1,91 @@
+.nav-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 96rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav-bottom button {
+  width:176rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius:36rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  padding: 0;
+  margin-left: 0;
+  background: transparent;
+}
+.nav-bottom .agree {
+  border: 1rpx solid #f76925;
+  color: #f76925;
+  margin-right: 20rpx;
+}
+.nav-bottom .refuse {
+  border: 1rpx solid #999;
+  color: #999;
+  margin-right: 20rpx;
+}
+
+.dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+.dialog .content {
+  width: 500rpx;
+  height: 330rpx;
+  border-radius: 16rpx;
+  background: #fff;
+  margin: 40% auto 0;
+  position: relative;
+}
+.dialog .content .title {
+  font-size: 32rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  line-height: 98rpx;
+}
+.dialog .content input {
+  width: 380rpx;
+  height: 70rpx;
+  border: 1px solid #CCCCCC;
+  font-size: 28rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+}
+.dialog .content .handle {
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  border-top: 1px solid #f3f6f9;
+}
+.dialog .content .handle view {
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  width: 100%;
+}
+.dialog .content .handle view:nth-of-type(2) {
+  color: #007AFF;
+  border-left: 1px solid #f3f6f9;
+}

@@ -1,0 +1,63 @@
+<!--pages/buyer/mine/index.wxml-->
+<view class='mine-page'>
+  <!--顶部-->
+  <!-- <view class="head-area">
+    <view>我的</view>
+  </view> -->
+  <nav-bar navHeight="{{menubutton.height}}" navTop="{{menubutton.top}}" opacity="{{opacity}}" backIcon="{{backIcon}}" homeIcon="{{homeIcon}}">
+    <view class="head-btn">我的</view>
+  </nav-bar>
+  <view 
+    class="mine-bg" 
+    style="margin-top:{{(menubutton.height + menubutton.top) * 2 + 40 + 'rpx'}}"
+  >
+    <view class="mine-content">
+      <!-- 顶部 用户信息 -->
+      <view class='mine-head'>
+          <image lazy-load="true" class="header" src="{{userInfo.avatar ? userInfo.avatar + mine_user : mine_default}}"></image>
+          <view class='mine-head--info'>
+            <view class='mine-head--name'  wx:if="{{is_login}}">{{userInfo.nickname}}</view>
+            <view class='navigator mine-head--login' 
+              wx:if="{{!is_login}}"
+              bindtap="goTransfer"
+            >
+              注册/登录
+              <icon class="iconfont icon-youjiantou"></icon>
+            </view>
+          </view>
+      </view>
+    </view>
+    <!-- 选项 -->
+    <view 
+      class="option-item"
+      bindtap="{{item.method}}" 
+      wx:for="{{navList}}" 
+      wx:key="item"
+    >
+      <van-cell 
+        title="{{item.name}}" 
+        icon="{{item.icon}}"
+        value="{{item.value}}" 
+        is-link 
+        border="{{false}}"
+        custom-class="nav-cell"
+      />
+    </view>
+  </view>
+  <!-- 拨打电话 -->
+  <van-dialog id="van-dialog" />
+  <!-- 切换身份 -->
+  <van-dialog
+    use-slot
+    width="260"
+    show="{{ showScene }}"
+    show-cancel-button
+    bind:close="onClose"
+    bind:cancel="onClose"
+    bind:confirm="setScene"
+  >
+    <view class="scene-title">您当前的身份为商家，是否切换为 <text>买家</text> 身份？</view>
+  </van-dialog>
+  <!--底部-->
+  <sell-footer active="{{2}}"></sell-footer>
+</view>

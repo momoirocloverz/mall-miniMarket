@@ -1,0 +1,184 @@
+/**index.wxss**/
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 380rpx;
+  background: url(https://img.hzanchu.com/acimg/a190a76031b23aafce51d9bbde73fd03.png) no-repeat;
+  background-size: contain;
+}
+
+
+.collection {
+  box-sizing: border-box;
+  display: flex;
+  border: 2rpx solid #E5E5E5;
+  border-radius: 100rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+}
+
+.collection text {
+  padding-left: 8rpx;
+}
+
+.nav-right,
+.store-title,
+.nav-capsule {
+  height: 100%;
+}
+
+.nave-container {
+  display: flex;
+}
+
+.nav-right {
+  flex: none
+}
+
+.store-title {
+  flex: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 10rpx;
+  height: 76rpx;
+}
+
+.store-title .title {
+  display: flex;
+  align-items: center;
+}
+
+.store-title .title image:nth-of-type(1) {
+  width: 28rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.store-title .title text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.store-title .title image:nth-of-type(2) {
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+}
+
+.placeholder {
+  width: 100%;
+}
+
+.container {
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0 3%;
+  position: fixed;
+  width: 94%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.goods-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20rpx 30rpx 20rpx;
+}
+
+.banner-image {
+  width: 690rpx;
+  height: 240rpx;
+  margin-left: 30rpx;
+  border-radius: 10rpx;
+}
+
+.login-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 85rpx;
+  color: #fff;
+  font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+  font-weight: 500;
+  font-size: 32rpx;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-text {
+  line-height: 85rpx;
+  padding-left: 30rpx;
+}
+
+.login-btn {
+  width: 172rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  padding: 0 22rpx;
+  background-color: #FCC911;
+  color: #333333;
+}
+
+.bottom-box {
+  height: 100rpx;
+}
+
+/* 分类导航 */
+.tab-warp {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.tab-list {
+  display: flex;
+  overflow: hidden;
+}
+
+.tab-item {
+  margin: 0 36rpx;
+  display: inline-block;
+  cursor: pointer;
+  min-width: 0;
+  text-align: center;
+  user-select: none;
+}
+
+.license {
+  position: fixed;
+  bottom: 240rpx;
+  right: 24rpx;
+}
+
+.license image {
+  height: 80rpx;
+  width: 100rpx;
+}
+
+.buy-content {
+  width: 100%;
+  margin-top: 180rpx;
+}

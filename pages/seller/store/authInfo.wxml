@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="store-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="item">
+        <label>经营人姓名</label>
+        <text>{{detailData.nickname}}</text>
+      </view>
+      <view class="item">
+        <label>手机号码</label>
+        <text>{{detailData.mobile}}</text>
+      </view>
+      <view class="item">
+        <label>所在区域</label>
+        <text>{{detailData.address}}</text>
+      </view>
+      <view class="item">
+        <label>店铺地址</label>
+        <text bindtap="chooseAddress">{{detailData.detailAddress}}</text>
+        <van-icon name="arrow" size="14px"/>
+      </view>
+      <view class="item">
+        <label>详细地址</label>
+        <input class="item-input" value="{{detailData.detail_address}}" placeholder="请输入详细地址" bindinput="changeDetailAddress"/>
+      </view> 
+      <view class="item">
+        <label>主体名称</label>
+        <text>{{detailData.corporate_name}}</text>
+      </view>
+      <!-- <view class="item"  wx:if="{{isShowDetail}}">
+        <label>经营人身份证号</label>
+        <text>{{detailData.identity}}</text>
+      </view> -->
+      <view class="item id-card" wx:if="{{isShowDetail}}">
+        <label>身份证正面照(国徽)</label>
+        <van-uploader
+          file-list="{{frontList}}"
+          class="license-upload id-card-front"
+          max-count="1"
+          deletable="{{false}}"
+          disabled="{{true}}"
+          upload-icon=""
+        > 
+        </van-uploader>
+      </view>
+      <view class="item id-card" wx:if="{{isShowDetail}}">
+        <label>身份证背面照(人像)</label>
+        <van-uploader
+          file-list="{{reverseList}}"
+          class="license-upload id-card-back"
+          max-count="1"
+          deletable="{{false}}"
+          disabled="{{true}}"
+          upload-icon=""
+        > 
+        </van-uploader>
+      </view>
+      <view class="item id-card" wx:if="{{isShowDetail}}">
+        <label>营业执照</label>
+        <van-uploader
+          file-list="{{positiveList}}"
+          class="license-upload license-license"
+          max-count="1"
+          deletable="{{false}}"
+          disabled="{{true}}"
+          upload-icon=""
+        > 
+        </van-uploader>
+      </view>
+    </form>
+  </view>
+  <map-dialog isAuthor="{{isAuthor}}" bind:cancelAuthor="cancelMapAuthor" bind:openSetting="openSettingInfo"/>
+  <button class="save-address" hover-class="none" bindtap="saveAddress">保存</button>
+  </view>
+  

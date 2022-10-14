@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container">
+  <nav-bar navHeight="{{menubutton.height}}" navTop="{{menubutton.top}}" opacity="{{opacity}}" backIcon="{{backIcon}}" homeIcon="{{homeIcon}}">
+    <view class="head-btn">我的店铺</view>
+  </nav-bar>
+  <!--主体内容-->
+  <view 
+    class="store-area" 
+    style="margin-top:{{(menubutton.height + menubutton.top) * 2 + 60 + 'rpx'}}"
+  >
+    <view class="store-msg">
+      <view class="store-basic-msg" bindtap="toStoreManage">
+        <image src="{{headImg}}"></image>
+        <text>{{storeTitle}}</text>
+      </view>
+      <button class="share-store" hover-class="btn-hover" bindtap="toShare">
+        <image src="https://img.phbjx.com/test/154a1eb1fa356b346c0cc60841e432cc.png"></image>
+      </button>
+    </view>
+    <view class="store-data">
+      <view wx:for="{{dataList}}" wx:key="index">
+        <text>{{item.data}}</text>
+        <text class="data-name">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="store-entrance">
+    <view class="item" wx:for="{{entryList}}" wx:key="index" data-jump-url="{{item.url}}" bindtap="toDetailPage">
+      <image src="{{item.img}}"></image>
+      <text>{{item.name}}</text>
+      <view class="tip" wx:if="{{item.url === '/pages/seller/shipments/list' && noShipOrder > 0}}">{{noShipOrder > 99 ? "99+" : noShipOrder}}</view>
+    </view>
+  </view>
+  <!--底部-->
+  <sell-footer active="{{0}}"></sell-footer>
+</view>
+<van-overlay show="{{ overlayVisible }}">
+  <view class="lay-wrapper">
+    <view class="share-wrap">
+      <image src="https://img.phbjx.com/test/3a8903ffa9f1dd3b2eb21e4c96b107fd.png" class="share-tip"></image>
+    </view>
+    <view>
+      <image src="https://img.phbjx.com/test/323e8e063789ad8ef14d590ecf34808f.png" class="close-tip"  bindtap="onClickHide"></image>
+    </view>
+  </view>
+</van-overlay>

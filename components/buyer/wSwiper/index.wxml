@@ -1,0 +1,11 @@
+<!--components/wSwiper/index.wxml-->
+<view style="height:{{height}};position: relative;">
+  <swiper style="height:{{height}}" bindchange="changeItem">
+    <block wx:for="{{list}}" wx:key="item">
+      <swiper-item  >
+        <image src="{{item}}?x-oss-process=image/resize,m_lfit,w_750" mode="widthFix" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="progress">{{nowIndex}}<text>/{{len}}</text></view>
+</view>

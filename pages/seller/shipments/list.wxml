@@ -1,0 +1,70 @@
+<!--pages/buyer/order/list.wxml-->
+<view class="container">
+  <!-- 商品列表 -->
+  <view 
+    class="order-item"
+    wx:for="{{orderList}}"
+    wx:key="orderIndex"
+    wx:for-item="orderItem"
+  >
+    <view class="cont-item">
+      <!-- <van-cell 
+        title="{{'订单编号：' + orderItem.order_sn}}" 
+        title-class="title-item"
+        value-class="value-item"
+      /> -->
+      <van-cell 
+        title="{{'下单时间：' + orderItem.created_at}}" 
+        title-class="title-item"
+        value-class="value-item"
+      />
+      <van-card
+        wx:for="{{orderItem.goods_info}}"
+        wx:key="goodsIndex"
+        wx:for-item="goodsItem"
+        custom-class="goods-card"
+        title-class="goods-title"
+        num="{{goodsItem.goods_num}}"
+        price="{{goodsItem.goods_price}}"
+        title="{{goodsItem.goods_name}}"
+        thumb="{{ goodsItem.goods_image  }}"
+      />
+      <!-- 价格栏 -->
+      <view class="price-column">
+        <view class="goods-num">共{{orderItem.goods_info.length}}件商品，</view>
+        <view class="goods-price-label">合计</view>
+        <view class="goods-price">￥{{orderItem.total_price}}</view>
+        <view class="goods-express">（含运费￥{{orderItem.freight}}）</view>
+      </view>
+      <!-- 买家信息 -->
+      <view class="buyer-info">
+        <view>
+          <text>买家姓名</text>
+          <text>{{orderItem.consignee}}</text>
+        </view>
+        <view>
+          <text>联系方式</text>
+          <text>{{orderItem.mobile}}</text>
+        </view>
+      </view>
+      <!-- 状态按钮栏 -->
+      <view class="button-wrap">
+        <view class="calcle" data-id="{{orderItem.order_sn}}" bindtap="cancel">取消订单</view>
+        <view data-id="{{orderItem.order_sn}}" bindtap="toShip">去发货</view>
+      </view>
+    </view>
+  </view>
+  <!-- 到底 -->
+  <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+  <is-empty wx:if="{{isEmpty}}" image="https://img.hzanchu.com/acimg/abaa2ab58b011e29e3b9b0d70ddda5bb.png" text="暂无订单需要发货哦~" margin="286rpx 0 0 0"></is-empty>
+</view>
+<view class="dialog" wx:if="{{showDialog}}">
+  <view class="content">
+    <view class="title">{{dialogType ==='refuse'?'拒绝原因':'取消订单原因'}}</view>
+    <input value="{{reason}}" placeholder="{{dialogType ==='refuse'?'请填写拒绝原因':'请填写取消订单原因'}}" bindinput="inReason"></input>
+    <view class="handle">
+      <view bindtap="quxiao">取消</view>
+      <view bindtap="queding">确定</view>
+    </view>
+  </view>
+</view>

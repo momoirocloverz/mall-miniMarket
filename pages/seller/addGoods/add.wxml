@@ -1,0 +1,184 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="goods-head">
+    <view class="title">
+      <text class="name">商品标题</text>
+      <text class="number">{{wordNumber}}/50</text>
+    </view>
+    <input
+      class="title-text"
+      placeholder-class="placeholder-color"
+      placeholder="例如： 平湖大西瓜黄瓤西瓜2kg*4个，一箱"
+      maxlength="50"
+      value="{{title}}"
+      bindinput="recordWordNumber"
+    ></input>
+    <view class="line"></view>
+    <view class="goodsImage goods-images-flex" bindtap="toGoodsImages" data-item="container">
+        <!-- <label>商品图片</label>
+        <view class="goods-icon">
+          <text style="color : {{detailImg.length === 0 ? '#ccc' : '#333'}}">{{detailImg.length === 0 ? '未添加' : '已添加'}}</text>
+          <image src="https://img.hzanchu.com/acimg/abde812e8eaa291aaacd694e03fd5488.png?x-oss-process=image/resize,l_300"></image>
+        </view> -->
+
+      <view class="image-out-container">
+        <view class="main-image-title" data-item="container">
+          <view class="name padding-name" data-item="container">商品图片</view>
+          <view class="goods-icon" data-item="container">点击进入调整主图<image src="https://img.hzanchu.com/acimg/abde812e8eaa291aaacd694e03fd5488.png?x-oss-process=image/resize,l_300"></image></view>
+        </view>
+        <view class="add-image" data-item="container"> 
+          <van-uploader
+            file-list="{{fileList}}"
+            bind:after-read="afterRead"
+            deletable="{{false}}"
+            multiple="{{true}}"
+            preview-size="200rpx"
+            bind:delete="deletImg"
+            max-count="5"
+            show-upload="{{false}}"
+          >
+          </van-uploader>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="goods-body">
+    <form catchsubmit="formSubmit">
+      <view class="cont">
+        <view class="item" bindtap="selectCategory">
+          <label>类目</label>
+          <view>
+            <text style="color : {{selectValue ? '#333' : '#ccc'}}">{{selectValue || '请选择商品类目'}}</text>
+            <image src="https://img.hzanchu.com/acimg/abde812e8eaa291aaacd694e03fd5488.png"></image>
+          </view>
+        </view>
+        <van-popup 
+          show="{{ showCategory }}" 
+          bind:close="onClose" 
+          position="bottom"
+          round
+          close-on-click-overlay="false"
+        >
+          <view class="popup-bar">
+            <view bindtap="onCancel">取消</view>
+            <view bindtap="onConfirm">确定</view>
+          </view>
+          <picker-view 
+            indicator-style="height: 50px;" 
+            style="width: 100%; height: 300px;" 
+            value="{{value}}"
+            bindchange="bindChange"
+          >
+            <picker-view-column>
+              <view wx:for="{{goodsTypeList1}}" wx:key="column1" style="line-height: 50px; text-align: center;">{{item.name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{goodsTypeList2}}" wx:key="column2" style="line-height: 50px; text-align: center;">{{item.name}}</view>
+            </picker-view-column>
+          </picker-view>
+        </van-popup>
+        <!-- <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{goodsTypeList}}" range-key="{{'name'}}">
+          <view class="picker">
+            当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+          </view>
+        </picker> -->
+        <view class="item">
+          <label>价格（元）</label>
+          <input
+            name="price"
+            placeholder-class="placeholder-color"
+            placeholder="请输入价格"
+            value="{{formData.price}}"
+            data-index="0"
+            bindinput="changeForm"
+          ></input>
+        </view>
+        <view class="item">
+          <label>原价（元）</label>
+          <input 
+            name="originalPrice" 
+            placeholder-class="placeholder-color" 
+            placeholder="仅做展示使用，非必填" 
+            value="{{formData.originalPrice}}" 
+            data-index="5" 
+            bindinput="changeForm"
+          ></input>
+        </view>
+        <view class="item">
+          <label>规格</label>
+          <input
+            name="unit"
+            placeholder-class="placeholder-color"
+            placeholder="请输入规格"
+            value="{{formData.unit}}"
+            data-index="1"
+            bindinput="changeForm"
+          ></input>
+        </view>
+        <view class="item">
+          <label>库存</label>
+          <input
+            name="store"
+            placeholder-class="placeholder-color"
+            type="number"
+            placeholder="请输入库存"
+            value="{{formData.store}}"
+            data-index="2"
+            bindinput="changeForm"
+          ></input>
+        </view>
+        <view class="item">
+          <label>运费（元）</label>
+          <input
+            name="postage"
+            type="number"
+            placeholder-class="placeholder-color"
+            placeholder="请输入运费"
+            value="{{formData.postage}}"
+            data-index="3"
+            bindinput="changeForm"
+          ></input>
+        </view>
+        <view class="itemtwo">
+          <view>
+            <text>运费说明</text>
+            <text>{{formData.explain.length}}/100</text>
+          </view>
+          <textarea name="explain" placeholder-class="placeholder-textarea" placeholder="例如：平湖市内地区免邮费，非必填" value="{{formData.explain}}" maxlength="100" data-index="6" bindinput="changeForm"/>
+        </view>
+        <view class="item" bindtap="toType">
+          <label>所属分类</label>
+          <view>
+            <text style="color: {{typeName === '' ? '#ccc' : '#333'}}">{{typeName === '' ? '请选择分类' : typeName}}</text>
+            <image src="https://img.hzanchu.com/acimg/abde812e8eaa291aaacd694e03fd5488.png?x-oss-process=image/resize,l_300"></image>
+          </view>
+        </view>
+        <view class="item" bindtap="toDetail">
+          <label>商品详情图</label>
+          <view>
+            <text style="color : {{detailImg.length === 0 ? '#ccc' : '#333'}}">{{detailImg.length === 0 ? '未添加' : '已添加'}}</text>
+            <image src="https://img.hzanchu.com/acimg/abde812e8eaa291aaacd694e03fd5488.png?x-oss-process=image/resize,l_300"></image>
+          </view>
+        </view>
+        <view class="item">
+          <label>商品排序</label>
+          <input
+            name="sort"
+            placeholder-class="placeholder-color"
+            type="number"
+            placeholder="请输入展示顺序，越大越靠前"
+            value="{{formData.sort}}"
+            data-index="4"
+            bindinput="changeForm"
+          ></input>
+        </view>
+      </view>
+      <view class="release">
+        <button
+          type="primary"
+          formType="submit"
+        >发布</button>
+      </view>
+    </form>
+  </view>
+</view>

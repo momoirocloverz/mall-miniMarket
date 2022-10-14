@@ -1,0 +1,101 @@
+/* pages/buyer/refunds/detail.wxss */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+  padding: 20rpx 0 108rpx 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.content {
+  width: 100%;
+  background: #fff;
+  padding: 34rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+}
+.content .state {
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #f76925;
+  margin-bottom: 35rpx;
+}
+.content .item {
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+.content .flex {
+  display: flex;
+  align-items: center;
+}
+.content .label {
+  color: #333333;
+  font-weight: 600;
+}
+.content .value {
+  color: #333333;
+  font-size: 400;
+}
+.item input {
+  flex: 1;
+  height: 62rpx;
+  border: 1rpx solid #dcdcdc;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+.item .describe {
+  min-height: 185rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background: #fafafa;
+  border: 1rpx solid #eeeeee;
+  border-radius: 10rpx;
+  color: #333;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.item .voucher {
+  margin-top: 29rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.item .voucher image {
+  width: 216rpx;
+  height: 216rpx;
+  border-radius: 5rpx;
+  margin-right: 18rpx;
+  margin-bottom: 10rpx;
+}
+.item .voucher image:nth-child(3n) {
+  margin-right: 0;
+}
+.item .declare {
+  margin-top: 12rpx;
+  padding-bottom: 18rpx;
+}
+.item .declare view {
+  line-height: 50rpx;
+}
+.operation {
+  width: 100%;
+  height: 98rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  box-shadow: 0 0 20rpx 10rpx rgba(0,0,0,0.1); 
+}
+.operation view {
+  width: 50%;
+  text-align: center;
+  line-height: 98rpx;
+  color: #333;
+  font-size: 32rpx;
+}
+.operation view:last-child {
+  background: #FFD339;
+}

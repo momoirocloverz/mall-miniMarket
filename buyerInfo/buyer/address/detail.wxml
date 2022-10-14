@@ -1,0 +1,145 @@
+<!--pages/buyer/address/detail.wxml-->
+<!--pages/address/addressEdit/index.wxml-->
+<view class='address-page'>
+  <view class='address-info'>
+    <view class='address-item'>
+      <text class='item-name'>收货人</text>
+      <input 
+        placeholder='请输入收货人姓名' 
+        placeholder-class='placeholder' 
+        value="{{userName}}"
+        bindinput='getUseName'
+        maxlength="10"
+      ></input>
+    </view>
+    <view class='address-item'>
+      <text class='item-name'>手机号码</text>
+      <input 
+        placeholder='请输入收货人手机号码' 
+        placeholder-class='placeholder' 
+        type='number' 
+        maxlength="11" 
+        value="{{userPhone}}"
+        bindinput='getMobile'
+      ></input>
+    </view>
+    <view class="address-item">
+      <view class='item-name'>所在地区</view>
+      <view 
+        bindtap='cascadePopup'
+        wx:if="{{provinceName != '请选择'}}"
+        class='address-province'>
+        {{provinceName}}{{cityName}}{{regionName}}{{streetName}}
+      </view>
+      <view class='placeholder' style='flex:1;' wx:if="{{provinceName == '请选择'}}" bindtap='cascadePopup'>请输入地址</view>
+      <icon class='iconfont icon-xiala down' bindtap='cascadePopup'></icon>
+    </view>
+    <view class="address-item">
+      <text class='item-name'>详细地址</text>
+      <input 
+        placeholder='如道路、门牌号等，最长为40个字' 
+        maxlength="40"
+        placeholder-class='placeholder'
+        value="{{detail}}"
+        bindinput='getAddressDetail'
+      ></input>
+    </view>
+    <view class='address-default'>
+      <view bindtap='setting' class='default-box'>
+        <text>设为默认地址</text>
+        <view class="btn close-btn" wx:if="{{setDefault != 1}}">
+          <view class="circle"></view>
+        </view>
+        <view class="btn open-btn" wx:if="{{setDefault == 1}}">
+          <view class="circle"></view>
+        </view>
+      </view>
+    </view>
+    <view class="delete-address" wx:if="{{editType}}">
+      <image src="https://img.hzanchu.com/acimg/6dc705e04a9882008ffe38b2bc6d5bca.png"></image>
+      <text bindtap="delAddress">删除地址</text>
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+  <view class='save-btn'>
+    <view bindtap='cancelHandle' class="cancel-btn">取消</view>
+    <view bindtap='submit' class="submit-btn">保存</view>
+  </view>
+  <!-- 地址选择 -->
+  <view class="modal">
+    <view class="modal-mask {{maskVisual}}" bindtap="cascadeDismiss"></view>
+    <view animation="{{animationData}}" class="modal-content">
+      <view class="modal-header">
+          <text class="modal-title">配送至</text>
+          <icon class="modal-close iconfont icon-CombinedShape" bindtap="cascadeDismiss" />
+      </view>
+      <view class="modal-body">
+      <!-- 名称 -->
+        <text 
+          class="viewpager-title {{current == 0 ? 'area-selected' : ''}}"
+          bindtap="changeCurrent" 
+          data-current="0">{{provinceName}}</text>
+        <text 
+          class="viewpager-title {{current == 1 ? 'area-selected' : ''}}" 
+          bindtap="changeCurrent" 
+          data-current="1">{{cityName}}</text>
+        <text 
+          class="viewpager-title {{current == 2 ? 'area-selected' : ''}}" 
+          bindtap="changeCurrent" 
+          data-current="2">{{regionName}}</text>
+        <text 
+          class="viewpager-title {{current == 3 ? 'area-selected' : ''}}" 
+          bindtap="changeCurrent" 
+          data-current="3">{{streetName}}</text>
+        <!-- 列表 -->
+        <swiper class="swiper-area" current="{{current}}" duration="300" bindchange="currentChanged">
+          <!-- 省 -->
+          <block wx:if="{{province.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{province}}" wx:key="index" data-index="{{index}}" bindtap="provinceTapped">
+                  <text wx:if="{{index == provinceIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+          <!-- 市 -->
+          <block wx:if="{{city.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{city}}" wx:key="index" data-index="{{index}}" bindtap="cityTapped">
+                  <text wx:if="{{index == cityIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+          <!-- 县、区 -->
+          <block wx:if="{{region.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{region}}" wx:key="index" data-index="{{index}}" bindtap="regionTapped">
+                  <text wx:if="{{index == regionIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+          <!-- 街道 -->
+          <block wx:if="{{street.length > 0}}">
+            <swiper-item>
+              <scroll-view scroll-y="true" class="viewpager-listview">
+                <view wx:for="{{street}}" wx:key="index" data-index="{{index}}" bindtap="streetTapped">
+                  <text wx:if="{{index == streetIndex}}" class="area-selected">{{item.name}}</text>
+                  <text wx:else>{{item.name}}</text>
+                </view>
+              </scroll-view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+</view>
+

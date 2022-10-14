@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="image-area">
+    <view class="image-item" wx:for="{{fileList}}" wx:key='index' wx:for-index="bindex">
+      <image mode="widthFix" src="{{item.url}}"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<!--pages/buyer/order/confirm.wxml-->
+<view class="container">
+  <view class="address-wrap">
+    <van-cell 
+      title="{{hasAddress ? addressInfo.consignee +'  '+ addressInfo.mobile: emptyText}}" 
+      icon="{{hasAddress ? '': 'plus' }}" 
+      label="{{hasAddress ? addressInfo.province_text + addressInfo.city_text + addressInfo.district_text + addressInfo.street_text + addressInfo.address : ''}}"
+      is-link
+      border="{{false}}"
+      label-class="address-label"
+      value-class="address-value"
+      class="box-shadow"
+      custom-class="box-shadow"
+      bind:click="goAddress"
+    />
+  </view>
+  <view class="goods-list">
+      <van-card
+        wx:for="{{goodsList}}"
+        wx:key="goodsIndex"
+        wx:for-item="goodsItem"
+        custom-class="{{index === 0 ? 'goods-card radius-top-16': 'goods-card'}} "
+        title-class="goods-title"
+        num="{{goodsItem.goods_count}}"
+        price="{{goodsItem.goods_info.price}}"
+        title="{{goodsItem.goods_info.goods_name}}"
+        thumb="{{ goodsItem.goods_info.slide_image[0]}}"
+      />
+      <van-cell-group 
+        custom-class="radius-top-16"
+      >
+        <van-field
+          value="{{ expressPrice ? expressPrice + '元' : '免运费' }}"
+          label="运费"
+          title-width="4em"
+          readonly
+          border="{{ false }}"
+          custom-class="radius-top-16"
+        />
+        <van-field
+          value="{{ user_note ? user_note: '' }}"
+          label="留言"
+          placeholder="给商家留言"
+          title-width="4em"
+          border="{{ false }}"
+          maxlength="50"
+          bind:change="onChangeMessage"
+        />
+      </van-cell-group>
+      <!-- 价格栏 -->
+      <view class="price-column">
+        <view class="goods-num">共{{orderInfo.count}}件，</view>
+        <view class="goods-price-label">合计:</view>
+        <view class="goods-price">￥{{orderInfo.amount}}</view>
+      </view>
+  </view>
+</view>
+<van-submit-bar
+  price="{{ payPrice }}"
+  label="待支付: "
+  loading="{{loading}}"
+  button-class="submit-btn"
+  button-text="提交订单"
+  bind:submit="onSubmit"
+/>

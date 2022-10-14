@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="cont">
+    <van-cell-group>
+      <van-field
+        value="{{ bank }}"
+        clearable
+        input-align="right"
+        data-type="3"
+        label="开户银行"
+        placeholder="请输入开户银行名称"
+        bind:change="onChange"
+      />
+      <van-field
+        value="{{ bankCode }}"
+        clearable
+        input-align="right"
+        type="number"
+        data-type="1"
+        label="银行卡号"
+        placeholder="请输入银行卡号"
+        bind:change="onChange"
+      />
+      <van-field
+        value="{{ name }}"
+        clearable
+        input-align="right"
+        data-type="2"
+        label="开卡人姓名"
+        placeholder="请输入开卡人姓名"
+        bind:change="onChange"
+      />
+    </van-cell-group>
+  </view>
+  <view class="withdrawal">
+    <van-button
+      type="default"
+      catchtap="save"
+    >保存</van-button>
+  </view>
+</view>

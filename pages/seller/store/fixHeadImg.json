@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "修改店铺头像",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

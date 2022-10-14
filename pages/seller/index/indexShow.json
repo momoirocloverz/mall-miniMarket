@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的店铺",
+  "onReachBottomDistance": 50,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "sell-footer": "/components/seller/sellFooter/index"
+  }
+}

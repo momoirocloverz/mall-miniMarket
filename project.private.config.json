@@ -1,0 +1,467 @@
+{
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "商品分享",
+          "pathName": "pages/common/share/shareGoods",
+          "query": "storeId=6&goodsId=8",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "buyerInfo/buyer/goods/index",
+          "query": "goods_id=232",
+          "scene": null
+        },
+        {
+          "name": "商品详情--买家",
+          "pathName": "pages/buyer/goods/index",
+          "query": "goods_id=30",
+          "scene": null
+        },
+        {
+          "name": "支付成功-买家",
+          "pathName": "pages/buyer/pay/success",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的--买家",
+          "pathName": "pages/buyer/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "取消订单--买家",
+          "pathName": "buyerInfo/buyer/order/list",
+          "query": "status=0",
+          "scene": null
+        },
+        {
+          "name": "订单详情-买家",
+          "pathName": "pages/buyer/order/detail",
+          "query": "order_sn= BJX20200803214402352242",
+          "scene": null
+        },
+        {
+          "name": "收货地址-买家",
+          "pathName": "pages/buyer/address/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "修改店铺名称--卖家",
+          "pathName": "pages/seller/store/fixName",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "收货地址详情-买家",
+          "pathName": "pages/buyer/address/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/store/fixDescript",
+          "pathName": "pages/seller/store/fixDescript",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/store/authInfo",
+          "pathName": "pages/seller/store/authInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "卖家---商品详情预览",
+          "pathName": "pages/seller/goodsManage/goodsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "申请售后-买家",
+          "pathName": "pages/buyer/refunds/create",
+          "query": "order_sn=BJX20200725165234048750",
+          "scene": null
+        },
+        {
+          "name": "添加商品--卖家",
+          "pathName": "pages/seller/addGoods/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/addGoods/type",
+          "pathName": "pages/seller/addGoods/type",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/addGoods/detail",
+          "pathName": "pages/seller/addGoods/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "申请开店--卖家",
+          "pathName": "pages/seller/store/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/goodsManage/allGoods",
+          "pathName": "pages/seller/goodsManage/allGoods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "买家首页",
+          "pathName": "pages/buyer/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/goods/add",
+          "pathName": "pages/seller/goods/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/goodsManage/allTypes",
+          "pathName": "pages/seller/goodsManage/allTypes",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物车",
+          "pathName": "pages/buyer/shopcart/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/seller/goodsManage/goodsDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单确认-买家",
+          "pathName": "pages/buyer/order/confirm",
+          "query": ""
+        },
+        {
+          "name": "支付成功-买家",
+          "pathName": "pages/buyer/pay/success",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/goods/type",
+          "pathName": "pages/seller/goods/type",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/goods/detail",
+          "pathName": "pages/seller/goods/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/fund/index",
+          "pathName": "pages/seller/fund/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "卖家---提现详情",
+          "pathName": "pages/seller/fund/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/fund/record",
+          "pathName": "pages/seller/fund/record",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/message/index",
+          "pathName": "pages/seller/message/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/afterSale/index",
+          "pathName": "pages/seller/afterSale/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/afterSale/detail",
+          "pathName": "pages/seller/afterSale/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "卖家-店铺管理",
+          "pathName": "pages/seller/store/manager",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/store/fixName",
+          "pathName": "pages/seller/store/fixName",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/store/fixDescript",
+          "pathName": "pages/seller/store/fixDescript",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/store/authInfo",
+          "pathName": "pages/seller/store/authInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/orderManage/list",
+          "pathName": "pages/seller/orderManage/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单详情--卖家",
+          "pathName": "pages/seller/orderManage/detail",
+          "query": "order_sn= BJX20200803214402352242",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/shipments/list",
+          "pathName": "pages/seller/shipments/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/shipments/detail",
+          "pathName": "pages/seller/shipments/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/home/index",
+          "pathName": "pages/seller/home/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的店铺",
+          "pathName": "pages/seller/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/mine/index",
+          "pathName": "pages/seller/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "售后列表-买家",
+          "pathName": "pages/buyer/refunds/list",
+          "query": "order_sn= BJX20200723174757286395",
+          "scene": null
+        },
+        {
+          "name": "店铺首页-卖家",
+          "pathName": "pages/seller/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "售后详情-买家",
+          "pathName": "pages/buyer/refunds/detail",
+          "query": "apply_id=3",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/policy/service",
+          "pathName": "pages/seller/policy/service",
+          "query": ""
+        },
+        {
+          "name": "pages/seller/entryStore/index",
+          "pathName": "pages/seller/entryStore/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "服务协议-买家",
+          "pathName": "pages/buyer/policy/service",
+          "query": "store_id=11",
+          "scene": null
+        },
+        {
+          "name": "隐私协议-买家",
+          "pathName": "pages/buyer/policy/privacy",
+          "query": "store_id=11",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/store/fixHeadImg",
+          "pathName": "pages/seller/store/fixHeadImg",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/seller/aaa/index",
+          "pathName": "pages/seller/aaa/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "卖家---商品管理",
+          "pathName": "pages/seller/goodsManage/allGoods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/common/share/shareStore",
+          "pathName": "pages/common/share/shareStore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/common/share/shareGoods",
+          "pathName": "pages/common/share/shareGoods",
+          "query": "goodsId=159&storeId=8",
+          "scene": null
+        },
+        {
+          "name": "店铺分享",
+          "pathName": "pages/common/share/shareStore",
+          "query": "storeId=43",
+          "scene": null
+        },
+        {
+          "name": "卖家-分享商店",
+          "pathName": "pages/common/share/shareStore",
+          "query": "storeId=40",
+          "scene": null
+        },
+        {
+          "name": "订单列表-卖家",
+          "pathName": "pages/seller/orderManage/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "buyerInfo/buyer/collection/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "店铺首页-买家",
+          "pathName": "pages/buyer/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "认证信息",
+          "pathName": "pages/seller/store/manager",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "分享店铺",
+          "pathName": "pages/common/share/shareStore",
+          "query": "storeId=274",
+          "scene": null
+        },
+        {
+          "name": "商品分享",
+          "pathName": "pages/common/share/shareGoods",
+          "query": "goodsId=196&storeId=27",
+          "scene": null
+        },
+        {
+          "name": "商家首页",
+          "pathName": "pages/buyer/index/index",
+          "query": "store_id=27",
+          "scene": null
+        },
+        {
+          "name": "buyerInfo/buyer/goods/index",
+          "pathName": "buyerInfo/buyer/goods/index",
+          "query": "goods_id=196&store_id=27",
+          "scene": null
+        },
+        {
+          "name": "足迹",
+          "pathName": "pages/buyer/store/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "资金管理",
+          "pathName": "pages/seller/fund/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "对账单详情",
+          "pathName": "pages/seller/fund/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "提现记录",
+          "pathName": "pages/seller/fund/record",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单列表--买家",
+          "pathName": "buyerInfo/buyer/order/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单确认",
+          "pathName": "buyerInfo/buyer/order/confirm",
+          "query": "cart_id=776&entrance=fastbuy&store_id=8",
+          "scene": null
+        },
+        {
+          "name": "发货管理",
+          "pathName": "pages/seller/shipments/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "发货详情",
+          "pathName": "pages/seller/shipments/detail",
+          "query": "order_sn=BJX20210204140205160431",
+          "scene": null
+        },
+        {
+          "name": "提现",
+          "pathName": "pages/seller/fund/confirm",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "setting": {
+    "urlCheck": true
+  }
+}

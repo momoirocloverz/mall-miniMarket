@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F7FA;
+  padding: 20rpx 30rpx 100rpx 30rpx;
+  box-sizing: border-box;
+}
+.msg-item {
+  min-height: 219rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: -1rpx 2rpx 8rpx 0 rgba(12,1,0,0.13);
+  margin-bottom: 20rpx;
+  padding: 30rpx 30rpx 35rpx 30rpx;
+  box-sizing: border-box;
+}
+.msg-item .top {
+  margin-bottom: 35rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.msg-item .top image {
+  width: 33rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  transform: translateY(5rpx);
+}
+.msg-item .title {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 500;
+}
+.msg-item .date {
+  font-size: 30rpx;
+  color: #999;
+}
+.msg-body {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 50rpx;
+}

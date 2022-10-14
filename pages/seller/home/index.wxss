@@ -1,0 +1,66 @@
+/**index.wxss**/
+.container {
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+}
+.header {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 0 3%;
+  position: fixed;
+  width: 94%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.goods-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20rpx 30rpx 20rpx;
+}
+.banner-image {
+  width: 690rpx;
+  height: 240rpx;
+  margin-left: 30rpx;
+  border-radius: 10rpx;
+}
+.login-overlay {
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+  height: 85rpx;
+  color: #fff;
+  font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+  font-weight: 500;
+  font-size: 32rpx;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+}
+.login-text{
+  line-height: 85rpx;
+  padding-left: 30rpx;
+}
+.login-btn{
+  width: 172rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  padding: 0 22rpx;
+  background-color: #FCC911;
+  color: #333333;
+}
+.bottom-box{
+  height: 100rpx;
+}
+.navbar {
+  width: 100%;
+  height: 380rpx;
+}
+.myself-top {
+}

@@ -1,0 +1,24 @@
+/* pages/buyer/pay/success.wxss */
+.pay-icon{
+  width: 95rpx;
+  height: 128rpx;
+  display: block;
+  margin: 100rpx auto 42rpx;
+}
+.pay-text{
+  text-align: center;
+  font-size: 36rpx;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+  font-weight: 700;
+  color: #222222;
+}
+.pay-btn{
+  margin-top: 63rpx;
+  display: flex;
+  justify-content: center;
+}
+.to-order{
+  width: 198rpx;
+  margin-left: 20rpx;
+  border-color: #999999!important;
+}

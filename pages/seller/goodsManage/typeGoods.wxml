@@ -1,0 +1,63 @@
+<view class="container">
+  <!--顶部按钮-->
+  <van-tabs active="{{ active }}" color="#FFD339" bind:change="onChange">
+    <van-tab name="sell" title="{{'出售中（' + onSaleNum + '）'}}">
+      <view wx:for="{{list}}" wx:key="index">
+        <view class="good-card">
+          <view class="good-image" catchtap="toDetail" data-id="{{item.goods_id}}">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="good-content">
+            <view catchtap="toDetail" data-id="{{item.goods_id}}">
+              <view class="title">{{item.goods_name}}</view>
+              <view class="buy-msg">
+                <text class="price">￥{{item.price}}</text>
+                <text class="store">库存：{{item.store_count}}</text>
+              </view>
+            </view>
+            <view class="operation-btn">
+              <view class="delete" bindtap="showDialog" data-id="{{item.goods_id}}">删除</view>
+              <navigator url="/pages/seller/addGoods/add?goodsId={{item.goods_id}}&url=/pages/seller/goodsManage/allGoods">
+                <view class="edit">编辑</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="{{'售罄（' + onSellNum + '）'}}" name="noSell">
+      <view wx:for="{{list}}" wx:key="index">
+        <view class="good-card">
+          <view class="good-image" catchtap="toDetail" data-id="{{item.goods_id}}">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="good-content">
+            <view catchtap="toDetail" data-id="{{item.goods_id}}">
+              <view class="title">{{item.goods_name}}</view>
+              <view class="buy-msg">
+                <text class="price">￥{{item.price}}</text>
+                <text class="store">库存：{{item.store_count}}</text>
+              </view>
+            </view>
+            <view class="operation-btn">
+              <view class="delete" bindtap="showDialog" data-id="{{item.goods_id}}">删除</view>
+              <navigator url="/pages/seller/addGoods/add?goodsId={{item.goods_id}}&url=/pages/seller/goodsManage/allGoods">
+                <view class="edit">编辑</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+  <!-- 到底 -->
+  <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+  <is-empty wx:if="{{isEmpty}}" image="https://img.hzanchu.com/acimg/dca47aa1755cfd823bcf1f89bfc75c72.png" text="暂无商品" margin="286rpx 0 0 0"></is-empty>
+  <!--删除二次确认-->
+  <van-dialog
+    message="确认删除该商品吗？"
+    show="{{ showDeleteDialog }}"
+    show-cancel-button
+    bind:confirm="deleteGoods"
+  />
+</view>

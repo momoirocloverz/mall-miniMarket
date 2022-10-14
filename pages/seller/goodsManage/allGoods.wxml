@@ -1,0 +1,60 @@
+<nav-bar navHeight="{{menubutton.height}}" navTop="{{menubutton.top}}" opacity="{{opacity}}" backIcon="{{backIcon}}" homeIcon="{{homeIcon}}">
+  <view class="head-btn">
+    <view bindtap="toAllGoods" class="{{toggle === 'all' ? 'checked' : ''}}">全部商品</view>
+    <view bindtap="toGoodsType" class="{{toggle === 'edit' ? 'checked' : ''}}">商品分类</view>
+  </view>
+</nav-bar>
+
+<view 
+  class="container" 
+  style="padding-top: {{(menubutton.height + menubutton.top) * 2 + 90}}rpx"
+>
+  <!-- 分类 -->
+  <view class="list-tops" style="top: {{headTop}}px">
+    <view class="tab-nav">
+      <view 
+        class="tab-nav-item" 
+        wx:for="{{tabList}}" 
+        wx:key="index" 
+        style="color:{{item.value==status?'#3C3C3C':'#3C3C3C'}}" 
+        bindtap="clickNav" data-item="{{item}}">
+        {{item.name + '(' + item.count + ')'}}
+        <view wx:if="{{item.value==status}}"></view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view wx:for="{{list}}" wx:key="index">
+        <view class="good-card">
+          <view class="good-image" catchtap="toDetail" data-id="{{item.goods_id}}">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="good-content">
+            <view catchtap="toDetail" data-id="{{item.goods_id}}">
+              <view class="title">{{item.goods_name}}</view>
+              <view class="buy-msg">
+                <text class="price">￥{{item.price}}</text>
+                <text class="store">库存：{{item.store_count}}</text>
+              </view>
+            </view>
+            <view class="operation-btn">
+              <view class="delete" bindtap="showDialog" data-id="{{item.goods_id}}">删除</view>
+              <navigator url="/pages/seller/addGoods/add?goodsId={{item.goods_id}}&url=/pages/seller/goodsManage/allGoods">
+                <view class="edit">编辑</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <!-- 到底 -->
+  <is-end wx:if="{{!isEmpty && isEnd}}" text="我是有底线的哦"></is-end>
+  <is-empty wx:if="{{isEmpty}}" image="https://img.hzanchu.com/acimg/dca47aa1755cfd823bcf1f89bfc75c72.png" text="暂无商品" margin="286rpx 0 0 0"></is-empty>
+  <!--删除二次确认-->
+  <van-dialog
+    message="确认删除该商品吗？"
+    show="{{ showDeleteDialog }}"
+    show-cancel-button
+    bind:confirm="deleteGoods"
+  />
+</view>

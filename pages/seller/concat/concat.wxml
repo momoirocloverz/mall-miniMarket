@@ -1,0 +1,21 @@
+<view class="poster">
+  <view class='hb_02 poste_box' id='canvas-container'>
+    <image src="{{!qrCodedUrl? 'https://img.hzanchu.com/acimg/03cddd1c976e77b4b0079e5733995d0d.png?x-oss-process=image/resize,w_276,l_276' : qrCodedUrl}}"  mode="aspectFit"></image>
+  </view>
+
+  <view class="tips-text">
+    <text>
+      扫描二维码联系客服，或保存图片到本地
+    </text>
+  </view>
+  <view class="bottom">
+    <!-- <button class="share-btn" hover-class="btn-hover" open-type="share" data-item="{{shareInfo}}">
+      <image src="https://img.hzanchu.com/acimg/54021655d9a39e71d462a88fbc93a3c4.png"></image>
+      <view>分享好友</view>
+    </button> -->
+    <view class="save-btn" bindtap="save">
+      <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAA+CAYAAACftM1SAAAD8klEQVR4Xu2bT2gkRRTGv1cdMWIkKCL4DwwEDwZ1uqtnIwRkVPSgoiJGED0ogrDgyd1V8bR72MOyrB5E0Iu6CK4QFfG0okIQFCfdrzdzCLiXBAKCf3ZZNWE3LJM8qbVdJpNO0p2pnpklVceZV1999ZtXr7qrEoJrlwiQ4/AfgZ6CmJyc9Obn5w8AeArAnyJyOEmSn3vx4/QUhNb6KID9LRNfAeAz8y/dhtFrEP8AuK5t0keY+c3dBkIyJnycmV90IAAHIs0CB8KBWF8QXEa4jHAZod32aZJAawfi0mJwINKa4EA4EOu3B5cRLiNcRmS+Vbul4ZaGWxpuaWx15OZqhKsRrkbsrhoRBMGzAG7JexRPRO+0x4pIBODTPBpKqQue552o1+vmfqSjZvWCR2s9C+DejhwV6/x3s9kcazQavxbrtjHaKgjf9+9SSpm7y/bbq059ZvVfE5FHkyT5xoa4VRDpYctjAL4GoGwY3EyDiF6L43jD0trpmNZBGCNhGL4uIkd2amq7fiLyYZIkL28XV+T7UkCkMD4RkReKmMkZ++PKysqDc3NzF3PG5worDUStVhtcWlqaBjCey0m+oMWBgYE99Xr993zh+aNKA5HWi5sBmO3w1vyWNo08r5SaiKLI7EzWW6kgjFvf90Ol1A8ArunEPRE9E8fxF51obNV3HQit9Y0AHiGic0NDQ99OT083bQwchuFzIpLrISlrPBE5mCTJIRtejIb5k6WFhYVRETnLzGfMZ5dBhGHoi8j3AK5PBzzled7DMzMzZ20YCMPwsIi8tQOtz5nZPLFm3YoVlgvDcEJETgC4PdU8xswHLoPQWtcB7GlTfp+Z9xYeLbsDBUHwFRE9UUDP1IMJZj5foM+moaOjo1cPDw8vAripNYiInmwFsYE4EcVxHFdtmDAaY2NjQ4ODgz8BuDuH5h8AqsxsjFtpQRDcQ0SNdjEiem9LEAAazFyx4iIVqVQqd3ieZ3YSU482axeVUg9EUWSgWWvVarWytrZ2KkPweNdBGBO+79+vlPoOwFVZsxSRl5Ik+dgagVSo70AYX0EQvEJEH2RM9m1m3mcbgtHrSxApjHeJ6NX/J01EJ0dGRh6fmppa3VUgarXawPLy8kkReQjA6dXV1ftmZ2f/KgNCX2eEMae1HgbwvFLqyyiKfisLQt+DKHPi7dp9WyO6CcFlRAttlxH9/BzR7WXhloZbGhtzztUICzXC/I/V6V6s55LGNMeFd+7k7bMkP30nu+1reN85LsmQA2HAEtFHrQcz3b7JLunHLS5LRG+0nmKb011zs3xtcakrusecOSBed68xPj5+W7PZfJqIbriip5bf/KKIfGZOyf8FJt4DNIywLJYAAAAASUVORK5CYII="></image>
+      <view>保存图片</view>
+    </view>
+  </view>
+</view>

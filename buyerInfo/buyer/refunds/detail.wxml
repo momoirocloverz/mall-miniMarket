@@ -1,0 +1,58 @@
+<!--pages/buyer/refunds/detail.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="state">售后中</view>
+    <view class="item">
+      <text class="label">退货类型：</text>
+      <text class="value">仅退款</text>
+    </view>
+    <view class="item flex">
+      <text class="label">退款金额：</text>
+      <text>{{orderInfo.refund_price}}</text>
+    </view>
+    <view class="item">
+      <text class="label">问题描述：</text>
+      <view class="describe">
+        {{orderInfo.reason}}
+      </view>
+    </view>
+    <view class="item">
+      <text class="label">上传凭证：</text>
+      <view class="voucher">
+        <image 
+          wx:for="{{orderInfo.image_arr}}"
+          wx:key="index"
+          src="{{item}}"
+        ></image>
+      </view>
+    </view>
+    <view class="item">
+      <text class="label">订单编号：</text>
+      <text class="value">{{orderInfo.order_sn}}</text>
+    </view>
+    <view class="item">
+      <text class="label">下单时间：</text>
+      <text class="value">{{orderInfo.order_at}}</text>
+    </view>
+    <view class="item">
+      <text class="label">申请退款时间：</text>
+      <text class="value">{{orderInfo.created_at}}</text>
+    </view>
+    <view class="item">
+      <text class="label">退款编号：</text>
+      <text class="value">{{orderInfo.refund_sn}}</text>
+    </view>
+    <view class="item">
+      <text class="label">售后申明：</text>
+      <view class="declare">
+        <view>1.若商品质量有问题，请您在收到货的2小时内联系商家，并提供相关照片等凭证。一个订单的所有商品只能发起一次售后。</view>
+        <view>2.特殊商品：鉴于生鲜农产品（蔬菜水果、水产海鲜、肉禽蛋类等）的特殊性和往返物流的高损耗，所售生鲜农产品非质量问题，恕不退换。</view>
+      </view>
+    </view>
+  </view>
+  <!--操作按钮-->
+  <view class="operation">
+    <view>拒绝</view>
+    <view>通过</view>
+  </view>
+</view>

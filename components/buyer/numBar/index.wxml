@@ -1,0 +1,14 @@
+<!--components/numBar/index.wxml-->
+<view class='num-bar'>
+  <view class='num-bar-up'>
+    <view class='num-bar-box'>
+      <view class='num-bar-left'>
+        <image class='num-bar-reduce' bindtap="reduceNum" src="../../../lib/image/buyer/shopcart/reduce.png"></image>
+        <view class='num-bar-num'>
+          <input type="number" value="{{goodsNum}}" bindconfirm="changeNum" bindblur="blur"/>
+        </view>
+        <image class='num-bar-add' bindtap="addNum" src="../../../lib/image/buyer/shopcart/add.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

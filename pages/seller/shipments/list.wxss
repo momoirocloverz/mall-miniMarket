@@ -1,0 +1,168 @@
+/* pages/buyer/order/list.wxss */
+.container{
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background: #F5F7FA;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.goods-card{
+  background-color: #ffffff!important;
+}
+.goods-title{
+  font-weight: 500 !important;
+  font-size: 26rpx !important;
+}
+.title-item {
+  color: #666666;
+  font-size: 28rpx;
+}
+.value-item {
+  font-size: 28rpx;
+  color: #666666;
+}
+.order-item {
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+}
+.cont-item {
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: -1rpx 2rpx 8rpx 0 rgba(12,1,0,0.13);
+}
+/* 价格栏 */
+.price-column {
+  display: flex;
+  font-size: 28rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: #ffffff;
+  padding: 30rpx;
+}
+.goods-num {
+  font-weight: 400;
+  color: #999999;
+}
+.goods-price-label {
+  font-weight: 500;
+  color: #333333;
+}
+.goods-price {
+  font-weight: 700;
+  color: #333;
+  font-size: 36rpx;
+  line-height: 36rpx;
+}
+.goods-express {
+  font-weight: 400;
+}
+.buyer-info {
+  padding: 20rpx 30rpx;
+  border-top: 1px solid #f5f7fa;
+}
+.buyer-info view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60rpx;
+}
+.buyer-info view text:nth-of-type(1) {
+  font-size: 28rpx;
+  color: #999999;
+}
+.buyer-info view text:nth-of-type(2) {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+.button-wrap {
+  width: 100%;
+  background: #ffffff;
+  padding: 0 30rpx 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.button-wrap view {
+  width: 150rpx;
+  height: 60rpx;
+  background: #ffffff;
+  border: 1rpx solid #f76925;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 30rpx;
+  color: #f76925;
+  margin-left: 16rpx;
+}
+.button-wrap .calcle {
+  border: 1rpx solid #999999;
+  color: #999999;
+}
+.van-card__price {
+  color: #333 !important;
+  font-size: 36rpx !important;
+}
+.van-card__price-integer {
+  font-size: 36rpx !important;
+}
+
+.dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+.dialog .content {
+  width: 660rpx;
+  height: 330rpx;
+  border-radius: 16rpx;
+  background: #fff;
+  margin: 40% auto 0;
+  position: relative;
+}
+.dialog .content .title {
+  font-size: 32rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+  line-height: 98rpx;
+}
+.dialog .content input {
+  width: 560rpx;
+  height: 70rpx;
+  border: 1px solid #CCCCCC;
+  font-size: 28rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  padding: 0 10rpx;
+}
+.dialog .content .handle {
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  border-top: 1px solid #f3f6f9;
+}
+.dialog .content .handle view {
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  width: 100%;
+}
+.dialog .content .handle view:nth-of-type(2) {
+  color: #007AFF;
+  border-left: 1px solid #f3f6f9;
+}

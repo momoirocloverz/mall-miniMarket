@@ -1,0 +1,14 @@
+ <!-- 授权 -->
+ <view class="author-page author-common" wx:if="{{isAuthor}}">
+    <view class="author-dark author-common"></view>
+    <view class="author-content">
+      <text class="author-content-title">温馨提示</text>
+      <text class="author-info">请点击确定按钮，授权之后才可以调用地图的操作</text>
+      <view class="author-button">
+        <view class="author-cancel" bindtap="cancelAddress">取消</view>
+        <view class="author-ok">
+          <button open-type="openSetting" hover-class="none" bindopensetting="handleOpenSetting">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>

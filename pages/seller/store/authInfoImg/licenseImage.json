@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "营业执照",
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

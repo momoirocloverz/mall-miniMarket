@@ -1,0 +1,135 @@
+/* pages/buyer/goodsDetail/index.wxss */
+.swiper-box{
+  padding-top: 132rpx;
+}
+.goods-base{
+  padding-bottom: 30rpx;
+}
+.goods-top{
+  padding: 30rpx 30rpx 10rpx;
+  display: flex;
+  align-items: center;
+}
+.goods-price{
+  color: #F11D09;
+  font-size: 36rpx;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+  font-weight: 700;
+}
+.original-price {
+  font-size: 24rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  color: #666666;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+}
+.goods-num {
+  font-size: 24rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  color: #666666;
+  margin-left: auto;
+}
+.goods-middle{
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.good-title{
+  width: 536rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  max-height: 76rpx;
+  line-height: 38rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding-left: 30rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.goods-share{
+  width: 125rpx;
+  height: 60rpx;
+  border-radius: 0;
+  border-top-left-radius: 34rpx;
+  background: linear-gradient(#ffda58 0%, #ffd339 100%);
+  border-bottom-left-radius: 34rpx;
+  box-sizing: border-box;
+  margin-right: 0;
+}
+.goods-share > view {
+  width: 125rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+}
+.goods-share image{
+  width: 27rpx;
+  height: 33rpx;
+}
+.goods-share text{
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 10rpx;
+}
+
+
+
+.goods-share button::after{
+  border: none !important;
+}
+.express-wrap {
+  border-top: 20rpx solid #F8F8F8;
+}
+.express-row {
+  display: flex;
+  padding: 16rpx 30rpx;
+  border-bottom: 20rpx solid #F8F8F8;
+}
+.express-label {
+  font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+  font-weight: 700;
+  font-size: 28rpx;
+  width: 100rpx;
+}
+.express-value {
+  margin-left: 30rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  font-size: 28rpx;
+  flex: 1;
+}
+.express-value text {
+  color: #ff3737;
+}
+/* 详情 */
+.goods-info{
+  padding-bottom: 100rpx;
+}
+.goods-label{
+  padding: 30rpx 0 30rpx 30rpx;
+  font-family: PingFang SC Bold, PingFang SC Bold-Bold;
+  font-weight: 700;
+  color: #333333;
+  font-size: 28rpx;
+}
+.goods-img-box image{
+  width: 100%;
+  display: block;
+}
+.van-nav-bar {
+  padding-bottom: 4rpx !important;
+}
+.btn-class, .confirm-icon{
+  color: #333333!important;
+}
+.van-icon-arrow-left {
+  color: #333333!important;
+  font-size: 36rpx;
+}
+.fast-buy button{
+  color: #333333!important;
+}

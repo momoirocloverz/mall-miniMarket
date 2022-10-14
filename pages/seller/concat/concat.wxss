@@ -1,0 +1,61 @@
+.poster {
+  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+.poste_box {
+  width: 500rpx;
+  /* height: 73vh; */
+  background: #fff;
+  border-radius:20rpx;
+  margin: 10vh auto 0;
+  overflow: hidden;
+}
+.poste_box image{
+  width: 100%;
+  display: inline-block;
+  padding-bottom: 40rpx;
+}
+.tips-text {
+  text-align: center;
+  font-size: 30rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+.bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 220rpx;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.save-btn {
+  width: 250rpx;
+  height: 88rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #333;
+  background: #FFD339;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.save-btn image {
+  display: inline-block;
+  width: 33rpx;
+  height: 31rpx;
+}
+
+.save-btn view {
+  padding-left: 15rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: 400;
+  color: #333333;
+}

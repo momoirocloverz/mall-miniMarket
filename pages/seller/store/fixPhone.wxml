@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="content">
+    <input maxlength="11" type="numer" value="{{value}}" bindinput="changePhone" placeholder="请输入电话"></input>
+  </view>
+  <view class="save" catchtap="submit">保存</view>
+</view>

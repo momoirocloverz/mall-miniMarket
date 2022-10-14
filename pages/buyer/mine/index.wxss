@@ -1,0 +1,221 @@
+/* pages/buyer/mine/index.wxss */
+.mine-page{
+  min-height: 100vh;
+  background: #F5F7FA;
+}
+.mine-bg{
+  overflow: hidden;
+}
+.head-area {
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 400;
+  padding-top: 67rpx;
+  margin-bottom: 39rpx;
+}
+.mine-content{
+  width: 100%;
+  height: 548rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  background: url(https://img.hzanchu.com/acimg/266d5efe0cda4476a2ddb1d0883a5b8b.png?x-oss-process=image/resize,l_300);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0 -50rpx;
+  position: relative;
+}
+.mine-head{
+  width: 100%;
+  padding: 0 30rpx 0;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+.mine-head--bg{
+  width: 100%;
+  height: 250rpx;
+}
+
+.mine-head .header{
+  width: 110rpx;
+  height: 110rpx;
+  display: block;
+  border-radius: 50%;
+  border: 4rpx solid #ffffff;
+}
+.mine-head--info{
+  margin-left: 33rpx;
+  overflow: hidden;
+}
+.mine-head--name{
+  width: 100%;
+  font-size: 40rpx;
+  color: #333;
+  font-weight:bold;
+}
+.mine-head--entry{
+  font-size:30rpx;
+  font-weight: bold;
+  color: #fff;
+}
+.mine-head--entry>.iconfont{
+  margin-left: 16rpx;
+}
+.mine-head--login{
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: bold;
+  background: none;
+}
+.mine-head--login>.iconfont{
+  font-weight: 400;
+}
+/* 订单信息 */
+.mine-order {
+  width: 686rpx;
+  height: 232rpx;
+  background: #ffffff;
+  border-radius: 8rpx;
+  box-shadow: 0 0 21rpx 0 rgba(11,19,14,0.11);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mine-order--title {
+  width: 100%;
+  padding: 23rpx 22rpx 16rpx 29rpx;
+  margin-bottom: 38rpx;
+  border-bottom: 1rpx solid #F5F7FA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.mine-order--all {
+  display: flex;
+  align-items: center;
+}
+.mine-order--all text {
+  font-size: 24rpx;
+  color: #666;
+}
+.mine-order--all icon {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 128rpx;
+  margin-left: 10rpx;
+}
+.mine-order--name {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+.mine-order--description {
+  color: #8e8e8e;
+  font-size: 26rpx;
+}
+.mine-order--description icon {
+  font-size: 28rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 18rpx;
+  transform: translateY(-8rpx);
+}
+.mine-order--type {
+  display: flex;
+}
+.mine-order--item {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+.mine-order--item__name {
+  color: #3c3c3c;
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}
+.mine-order--num {
+  position: absolute;
+  z-index:1;
+  top: -13rpx;
+  right: 62rpx;
+  min-width: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  font-size: 20rpx;
+  border-radius: 16rpx;
+  text-align: center;
+  color: #ED4A0A;
+  border: 3rpx solid #ED4A0A;
+  background: #fff;
+}
+.order-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+.banner-box {
+  margin: 22rpx auto 0;
+  width: 686rpx;
+  height: 267rpx;
+  border-radius: 32rpx;
+  box-shadow: 0 0 21rpx 0 rgba(11,19,14,0.11);
+}
+
+.nav-list {
+  padding: 0 32rpx 100rpx;
+}
+.option-item {
+  border-radius: 8rpx;
+  margin: 30rpx auto 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  height: 88rpx;
+  padding: 0 26rpx;
+}
+.option-item .icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+.option-item .title {
+  font-size: 26rpx;
+  color: #3c3c3c;
+  margin-left: 18rpx;
+}
+.option-item .subhead {
+  margin-left: auto;
+  color: #999;
+  font-size: 26rpx;
+}
+.option-item .youjiantou {
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 16rpx;
+}
+.nav-cell{
+  border-radius: 10rpx!important;
+}
+.scene-title{
+  padding: 30rpx;
+  text-align: center;
+}
+.scene-title text {
+  color: #F51818;
+}
+.nav-cell-title{
+  margin-left: 10rpx;
+}
+.nav-cell-icon{
+  padding-right: 18rpx;
+  display: flex;
+  align-items: center;
+}
+.nav-cell-icon image {
+  width: 100%;
+  height: 100%;
+}

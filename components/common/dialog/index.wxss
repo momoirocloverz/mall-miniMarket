@@ -1,0 +1,52 @@
+.dialog-shade {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.dialog {
+  width: 540rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 360rpx auto 0;
+  padding-bottom: 129rpx;
+  position: relative;
+  overflow: hidden;
+}
+.dialog .title {
+  font-size:36rpx;
+  color: #333;
+  line-height: 36rpx;
+  text-align: center;
+  margin-top: 39rpx;
+  font-family:PingFang;
+  font-weight:bold;
+}
+.handle {
+  width: 100%;
+  height: 86rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #e1e1e1;
+}
+.handle view {
+  width: 100%;
+  text-align: center;
+  line-height: 86rpx;
+  font-size:28rpx;
+  font-family:PingFang;
+}
+.handle .cancle {
+  color: #333333;
+  border-right: 1rpx solid #e1e1e1;
+}
+.handle .confirm {
+  font-weight:bold;
+  color: #007AFF;
+}

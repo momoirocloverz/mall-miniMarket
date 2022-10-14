@@ -1,0 +1,31 @@
+<!--components/buyer/storeCard/index.wxml-->
+<view class="store-card" bindtap="goStore">
+  <view class="store-info">
+    <image class="store-avatar" src="{{from === 'index' ? storeInfo.store_image : storeInfo.store_info.image}}" />
+    <view class="store-title">
+      <text class="store-title-text">{{from === 'index' ? storeInfo.title : storeInfo.store_info.title}}</text>
+      <text class="store-title-desc">{{from === 'index' ? storeInfo.description : storeInfo.store_info.description}}</text>
+    </view>
+    <view wx:if="{{!isShowMore}}" class="go-store"><van-icon name="arrow" color="#666"/></view> 
+    <view wx:if="{{isShowMore}}">
+      <text catchtap="handleMore" class="store-more">···</text> 
+      <view catchtap="handleUnCollection" class="{{collectionHide? 'display-none':'collection'}}">
+        <text class="text">取</text>
+        <text class="text">消</text>
+        <text class="text">收</text>
+        <text class="text">藏</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="store-goods">
+    <view class="store-goods-item">
+      <image class="store-goods-img" src="{{item.src}}" mode="widthFix"/>
+       <text class="store-goods-name">
+         {{item.goodsName}}
+       </text>
+      <text class="store-goods-price" >
+        ￥{{item.price}}
+      </text>   
+    </view>
+  </view>   -->
+</view>

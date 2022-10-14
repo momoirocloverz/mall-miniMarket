@@ -1,0 +1,28 @@
+/* pages/common/cropImage/index.wxss */
+/* 裁剪图片 */
+.cropper-box{
+  position: relative;
+}
+.cropper-cover{
+  background:rgba(14, 13, 13,.8);
+  position: fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  z-index: 1;
+}
+.cropper-submit{
+  color: #ffffff;
+}
+.control-wrap{
+  position: fixed;
+  bottom: 50rpx;
+  left: 0;
+  z-index: 100000;
+  height: 50rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: #ffffff;
+}

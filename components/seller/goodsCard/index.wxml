@@ -1,0 +1,15 @@
+<view class="goods-card" bindtap="goDetail">
+  <image 
+    src="{{goods.image + '?x-oss-process=image/resize,w_340'}}" 
+    mode="{{goods.image?'aspectFill':''}}" 
+    class="goods-image"
+    lazy-load></image>
+  <view class="goods-info">
+    <view class="goods-title">{{goods.goods_name}}</view>    
+    <view class="price-wrap">
+      <view class="price-box">
+        <view class="goods-price">￥{{ goods.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
